@@ -34,7 +34,42 @@ html::-webkit-scrollbar-thumb {
   z-index: 15;
   font-weight: 500;
   font-size: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex-grow: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-collapse > .d-flex {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-collapse form {
+  margin: 0;
 }
 .nav-link:hover {
   color: var(--primary);
@@ -116,6 +151,9 @@ html::-webkit-scrollbar-thumb {
 /* Language Switcher */
 .language-switcher {
   gap: 8px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
 }
 
 .lang-btn {
@@ -1065,6 +1103,49 @@ form .btn {
 }
 
 @media screen and (max-width: 768px) {
+  /* Navbar responsive fixes */
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: center !important;
+    padding: 15px 0;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    justify-content: center;
+    margin: 5px 0 !important;
+  }
+
+  .navbar-collapse > .d-flex {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .language-switcher {
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .navbar-collapse form {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .navbar-collapse form .btn {
+    width: auto;
+    padding: 10px 30px;
+  }
+
   .certification {
     padding: 60px 15px 30px 15px;
   }

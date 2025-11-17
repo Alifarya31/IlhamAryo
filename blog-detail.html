@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Article - Ilham Aryo Prasetyo</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #0ef;
+        --secondary-color: #081b29;
+        --text-color: #ededed;
+        --bg-color: #081b29;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px 0;
+        background: rgba(8, 27, 41, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+      }
+
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar-collapse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navbar-brand img {
+        border-radius: 5px;
+      }
+
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--text-color);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 16px;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: var(--primary-color);
+      }
+
+      .language-switcher {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-right: 0;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(0, 238, 255, 0.3);
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(0, 238, 255, 0.2);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .lang-btn img {
+        display: block;
+      }
+
+      /* Article Container */
+      .article-container {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        padding: 120px 0 60px;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        gap: 12px;
+        color: var(--primary-color);
+      }
+
+      .article-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .article-title {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, var(--primary-color), #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        font-size: 1rem;
+        color: rgba(237, 237, 237, 0.7);
+        margin-bottom: 20px;
+      }
+
+      .article-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .article-tags {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      .article-tag {
+        background: rgba(0, 238, 255, 0.2);
+        color: var(--primary-color);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        border: 1px solid rgba(0, 238, 255, 0.3);
+      }
+
+      .article-featured-image {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        border: 2px solid rgba(0, 238, 255, 0.2);
+      }
+
+      .article-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(0, 238, 255, 0.1);
+        border-radius: 15px;
+        padding: 50px;
+        backdrop-filter: blur(10px);
+      }
+
+      .article-content h1,
+      .article-content h2,
+      .article-content h3,
+      .article-content h4,
+      .article-content h5,
+      .article-content h6 {
+        color: var(--primary-color);
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .article-content h1 { font-size: 2.2rem; }
+      .article-content h2 { font-size: 1.8rem; }
+      .article-content h3 { font-size: 1.5rem; }
+
+      .article-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: rgba(237, 237, 237, 0.9);
+      }
+
+      .article-content ul,
+      .article-content ol {
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+
+      .article-content li {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        color: rgba(237, 237, 237, 0.9);
+      }
+
+      .article-content a {
+        color: var(--primary-color);
+        text-decoration: underline;
+        transition: all 0.3s ease;
+      }
+
+      .article-content a:hover {
+        color: #fff;
+      }
+
+      .article-content blockquote {
+        border-left: 4px solid var(--primary-color);
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: rgba(237, 237, 237, 0.8);
+      }
+
+      .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .article-content code {
+        background: rgba(0, 238, 255, 0.1);
+        color: var(--primary-color);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+
+      .article-content pre {
+        background: rgba(0, 238, 255, 0.05);
+        border: 1px solid rgba(0, 238, 255, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        overflow-x: auto;
+        margin: 20px 0;
+      }
+
+      .article-content pre code {
+        background: none;
+        padding: 0;
+      }
+
+      /* Loading State */
+      .loading {
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      .loading i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* Error State */
+      .error-state {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .error-state i {
+        font-size: 5rem;
+        color: rgba(0, 238, 255, 0.3);
+        margin-bottom: 20px;
+      }
+
+      .error-state h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .error-state p {
+        color: rgba(237, 237, 237, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .article-title {
+          font-size: 2rem;
+        }
+
+        .article-content {
+          padding: 30px 20px;
+        }
+
+        .article-meta {
+          gap: 15px;
+        }
+
+        /* Navbar responsive */
+        .navbar-collapse {
+          flex-direction: column;
+          align-items: center !important;
+          padding: 15px 0;
+        }
+
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        .nav-item {
+          width: 100%;
+          justify-content: center;
+          margin: 5px 0 !important;
+        }
+
+        .language-switcher {
+          justify-content: center;
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .article-title {
+          font-size: 1.8rem;
+        }
+
+        .article-content {
+          padding: 25px 15px;
+        }
+
+        .article-content h1 { font-size: 1.8rem; }
+        .article-content h2 { font-size: 1.5rem; }
+        .article-content h3 { font-size: 1.3rem; }
+
+        .article-content p,
+        .article-content li {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo ilham.jpg" alt="Logo Ilham" width="40" height="40">
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#home" data-translate="nav.home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#karya" data-translate="nav.karya">Karya & Kegiatan</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link active" href="blog.html" data-translate="nav.blog">Blog</a>
+            </li>
+          </ul>
+
+          <div class="language-switcher">
+            <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+            </button>
+            <button class="lang-btn" data-lang="en" title="English">
+              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Content -->
+    <div class="article-container">
+      <div class="container">
+        <a href="blog.html" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          <span data-translate="article.back">Kembali ke Blog</span>
+        </a>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+          <i class="fas fa-spinner"></i>
+          <p data-translate="article.loading">Memuat artikel...</p>
+        </div>
+
+        <!-- Article Content -->
+        <div id="articleContent" style="display: none;"></div>
+
+        <!-- Error State -->
+        <div id="errorState" class="error-state" style="display: none;">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h3 data-translate="article.error.title">Artikel Tidak Ditemukan</h3>
+          <p data-translate="article.error.message">Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.</p>
+          <a href="blog.html" class="back-button" style="margin-top: 20px;">
+            <i class="fas fa-arrow-left"></i>
+            <span data-translate="article.back">Kembali ke Blog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contentful Config -->
+    <script src="src/contentful-config.js"></script>
+
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      // Particles.js Configuration
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#0ef' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5, random: false },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#0ef',
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 1 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      // Translations
+      const translations = {
+        id: {
+          'nav.home': 'Beranda',
+          'nav.about': 'Tentang',
+          'nav.karya': 'Karya & Kegiatan',
+          'nav.blog': 'Blog',
+          'article.back': 'Kembali ke Blog',
+          'article.loading': 'Memuat artikel...',
+          'article.error.title': 'Artikel Tidak Ditemukan',
+          'article.error.message': 'Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.'
+        },
+        en: {
+          'nav.home': 'Home',
+          'nav.about': 'About',
+          'nav.karya': 'Works & Activities',
+          'nav.blog': 'Blog',
+          'article.back': 'Back to Blog',
+          'article.loading': 'Loading article...',
+          'article.error.title': 'Article Not Found',
+          'article.error.message': 'Sorry, the article you are looking for was not found or has been removed.'
+        }
+      };
+
+      // Get saved language or default to Indonesian
+      let currentLanguage = localStorage.getItem('language') || 'id';
+
+      // Function to change language
+      function changeLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+      }
+
+      // Initialize language
+      changeLanguage(currentLanguage);
+
+      // Language button listeners
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          changeLanguage(this.getAttribute('data-lang'));
+        });
+      });
+
+      // Get slug from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('slug');
+
+      // Function to render rich text content
+      function renderRichText(content) {
+        if (!content || !content.content) return '';
+
+        let html = '';
+
+        content.content.forEach(node => {
+          if (node.nodeType === 'paragraph') {
+            html += '<p>';
+            if (node.content) {
+              node.content.forEach(textNode => {
+                if (textNode.nodeType === 'text') {
+                  let text = textNode.value;
+                  if (textNode.marks) {
+                    textNode.marks.forEach(mark => {
+                      if (mark.type === 'bold') text = `<strong>${text}</strong>`;
+                      if (mark.type === 'italic') text = `<em>${text}</em>`;
+                      if (mark.type === 'code') text = `<code>${text}</code>`;
+                    });
+                  }
+                  html += text;
+                } else if (textNode.nodeType === 'hyperlink') {
+                  const linkText = textNode.content[0]?.value || '';
+                  html += `<a href="${textNode.data.uri}" target="_blank">${linkText}</a>`;
+                }
+              });
+            }
+            html += '</p>';
+          } else if (node.nodeType === 'heading-1') {
+            html += `<h1>${node.content[0]?.value || ''}</h1>`;
+          } else if (node.nodeType === 'heading-2') {
+            html += `<h2>${node.content[0]?.value || ''}</h2>`;
+          } else if (node.nodeType === 'heading-3') {
+            html += `<h3>${node.content[0]?.value || ''}</h3>`;
+          } else if (node.nodeType === 'heading-4') {
+            html += `<h4>${node.content[0]?.value || ''}</h4>`;
+          } else if (node.nodeType === 'unordered-list') {
+            html += '<ul>';
+            node.content.forEach(listItem => {
+              html += '<li>';
+              if (listItem.content && listItem.content[0]?.content) {
+                listItem.content[0].content.forEach(textNode => {
+                  html += textNode.value || '';
+                });
+              }
+              html += '</li>';
+            });
+            html += '</ul>';
+          } else if (node.nodeType === 'ordered-list') {
+            html += '<ol>';
+            node.content.forEach(listItem => {
+              html += '<li>';
+              if (listItem.content && listItem.content[0]?.content) {
+                listItem.content[0].content.forEach(textNode => {
+                  html += textNode.value || '';
+                });
+              }
+              html += '</li>';
+            });
+            html += '</ol>';
+          } else if (node.nodeType === 'blockquote') {
+            html += '<blockquote>';
+            if (node.content && node.content[0]?.content) {
+              node.content[0].content.forEach(textNode => {
+                html += textNode.value || '';
+              });
+            }
+            html += '</blockquote>';
+          }
+        });
+
+        return html;
+      }
+
+      // Fetch article from Contentful
+      async function fetchArticle() {
+        if (!slug) {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('errorState').style.display = 'block';
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            `https://cdn.contentful.com/spaces/${CONTENTFUL_CONFIG.space}/entries?access_token=${CONTENTFUL_CONFIG.accessToken}&content_type=blogPost&fields.slug=${slug}`
+          );
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch article');
+          }
+
+          const data = await response.json();
+
+          if (data.items && data.items.length > 0) {
+            displayArticle(data.items[0], data.includes);
+          } else {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('errorState').style.display = 'block';
+          }
+        } catch (error) {
+          console.error('Error fetching article:', error);
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('errorState').style.display = 'block';
+        }
+      }
+
+      // Display article
+      function displayArticle(article, includes) {
+        const fields = article.fields;
+        const assets = includes?.Asset || [];
+
+        // Get featured image
+        const featuredImageId = fields.featuredImage?.sys?.id;
+        const featuredImage = assets.find(asset => asset.sys.id === featuredImageId);
+        const imageUrl = featuredImage?.fields?.file?.url || '';
+
+        // Format date
+        const publishedDate = new Date(fields.publishedDate).toLocaleDateString('id-ID', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+        // Render content
+        const contentHtml = renderRichText(fields.content);
+
+        // Update page title
+        document.title = `${fields.title} - Ilham Aryo Prasetyo`;
+
+        // Build article HTML
+        const articleHtml = `
+          <div class="article-header">
+            <h1 class="article-title">${fields.title}</h1>
+            <div class="article-meta">
+              <span class="article-meta-item">
+                <i class="far fa-calendar"></i>
+                ${publishedDate}
+              </span>
+              ${fields.author ? `
+                <span class="article-meta-item">
+                  <i class="far fa-user"></i>
+                  ${fields.author}
+                </span>
+              ` : ''}
+              ${fields.readingTime ? `
+                <span class="article-meta-item">
+                  <i class="far fa-clock"></i>
+                  ${fields.readingTime} menit baca
+                </span>
+              ` : ''}
+            </div>
+            ${fields.tags ? `
+              <div class="article-tags">
+                ${fields.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+          ${imageUrl ? `<img src="https:${imageUrl}" alt="${fields.title}" class="article-featured-image">` : ''}
+          <div class="article-content">
+            ${contentHtml}
+          </div>
+        `;
+
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('articleContent').innerHTML = articleHtml;
+        document.getElementById('articleContent').style.display = 'block';
+      }
+
+      // Load article on page load
+      document.addEventListener('DOMContentLoaded', fetchArticle);
+    </script>
+  </body>
+</html>

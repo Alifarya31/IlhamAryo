@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Ilham Aryo Prasetyo</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #0ef;
+        --secondary-color: #081b29;
+        --text-color: #ededed;
+        --bg-color: #081b29;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px 0;
+        background: rgba(8, 27, 41, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+      }
+
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar-collapse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navbar-brand img {
+        border-radius: 5px;
+      }
+
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--text-color);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 16px;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: var(--primary-color);
+      }
+
+      .language-switcher {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-right: 0;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(0, 238, 255, 0.3);
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(0, 238, 255, 0.2);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .lang-btn img {
+        display: block;
+      }
+
+      /* Blog Container */
+      .blog-container {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        padding: 120px 0 60px;
+      }
+
+      .blog-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .blog-header h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, var(--primary-color), #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+
+      .blog-header p {
+        font-size: 1.2rem;
+        color: rgba(237, 237, 237, 0.8);
+      }
+
+      /* Blog Grid */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .blog-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(0, 238, 255, 0.2);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+        box-shadow: 0 10px 40px rgba(0, 238, 255, 0.3);
+      }
+
+      .blog-card-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: rgba(0, 238, 255, 0.1);
+      }
+
+      .blog-card-content {
+        padding: 25px;
+      }
+
+      .blog-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: rgba(237, 237, 237, 0.6);
+      }
+
+      .blog-card-date {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .blog-card-author {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .blog-card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--text-color);
+        line-height: 1.4;
+      }
+
+      .blog-card-excerpt {
+        font-size: 1rem;
+        color: rgba(237, 237, 237, 0.7);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .blog-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .blog-card-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .blog-tag {
+        background: rgba(0, 238, 255, 0.2);
+        color: var(--primary-color);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(0, 238, 255, 0.3);
+      }
+
+      .read-more {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .read-more:hover {
+        gap: 10px;
+      }
+
+      /* Loading State */
+      .loading {
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      .loading i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .empty-state i {
+        font-size: 5rem;
+        color: rgba(0, 238, 255, 0.3);
+        margin-bottom: 20px;
+      }
+
+      .empty-state h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .empty-state p {
+        color: rgba(237, 237, 237, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .blog-header h1 {
+          font-size: 2.5rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        /* Navbar responsive */
+        .navbar-collapse {
+          flex-direction: column;
+          align-items: center !important;
+          padding: 15px 0;
+        }
+
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        .nav-item {
+          width: 100%;
+          justify-content: center;
+          margin: 5px 0 !important;
+        }
+
+        .language-switcher {
+          justify-content: center;
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .blog-header h1 {
+          font-size: 2rem;
+        }
+
+        .blog-card-content {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo ilham.jpg" alt="Logo Ilham" width="40" height="40">
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#home" data-translate="nav.home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html#karya" data-translate="nav.karya">Karya & Kegiatan</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link active" href="blog.html" data-translate="nav.blog">Blog</a>
+            </li>
+          </ul>
+
+          <div class="language-switcher">
+            <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+            </button>
+            <button class="lang-btn" data-lang="en" title="English">
+              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <div class="blog-container">
+      <div class="container">
+        <div class="blog-header">
+          <h1 data-translate="blog.title">Blog</h1>
+          <p data-translate="blog.subtitle">Berbagi pemikiran, kajian, dan pengalaman</p>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+          <i class="fas fa-spinner"></i>
+          <p data-translate="blog.loading">Memuat artikel...</p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div id="blogGrid" class="blog-grid"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <i class="fas fa-inbox"></i>
+          <h3 data-translate="blog.empty.title">Belum Ada Artikel</h3>
+          <p data-translate="blog.empty.message">Artikel akan segera hadir. Nantikan konten-konten menarik!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contentful Config -->
+    <script src="src/contentful-config.js"></script>
+
+    <script>
+      // Particles.js Configuration
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#0ef' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5, random: false },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#0ef',
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 1 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      // Translations
+      const translations = {
+        id: {
+          'nav.home': 'Beranda',
+          'nav.about': 'Tentang',
+          'nav.karya': 'Karya & Kegiatan',
+          'nav.blog': 'Blog',
+          'blog.title': 'Blog',
+          'blog.subtitle': 'Berbagi pemikiran, kajian, dan pengalaman',
+          'blog.loading': 'Memuat artikel...',
+          'blog.empty.title': 'Belum Ada Artikel',
+          'blog.empty.message': 'Artikel akan segera hadir. Nantikan konten-konten menarik!',
+          'blog.readmore': 'Baca Selengkapnya'
+        },
+        en: {
+          'nav.home': 'Home',
+          'nav.about': 'About',
+          'nav.karya': 'Works & Activities',
+          'nav.blog': 'Blog',
+          'blog.title': 'Blog',
+          'blog.subtitle': 'Sharing thoughts, studies, and experiences',
+          'blog.loading': 'Loading articles...',
+          'blog.empty.title': 'No Articles Yet',
+          'blog.empty.message': 'Articles coming soon. Stay tuned for interesting content!',
+          'blog.readmore': 'Read More'
+        }
+      };
+
+      // Get saved language or default to Indonesian
+      let currentLanguage = localStorage.getItem('language') || 'id';
+
+      // Function to change language
+      function changeLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+      }
+
+      // Initialize language
+      changeLanguage(currentLanguage);
+
+      // Language button listeners
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          changeLanguage(this.getAttribute('data-lang'));
+        });
+      });
+
+      // Fetch blog posts from Contentful
+      async function fetchBlogPosts() {
+        try {
+          const response = await fetch(
+            `https://cdn.contentful.com/spaces/${CONTENTFUL_CONFIG.space}/entries?access_token=${CONTENTFUL_CONFIG.accessToken}&content_type=blogPost&order=-fields.publishedDate`
+          );
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch blog posts');
+          }
+
+          const data = await response.json();
+
+          // Hide loading
+          document.getElementById('loading').style.display = 'none';
+
+          if (data.items && data.items.length > 0) {
+            displayBlogPosts(data.items, data.includes);
+          } else {
+            document.getElementById('emptyState').style.display = 'block';
+          }
+        } catch (error) {
+          console.error('Error fetching blog posts:', error);
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('emptyState').style.display = 'block';
+        }
+      }
+
+      // Display blog posts
+      function displayBlogPosts(posts, includes) {
+        const blogGrid = document.getElementById('blogGrid');
+        const assets = includes?.Asset || [];
+
+        posts.forEach(post => {
+          const fields = post.fields;
+          const featuredImageId = fields.featuredImage?.sys?.id;
+          const featuredImage = assets.find(asset => asset.sys.id === featuredImageId);
+          const imageUrl = featuredImage?.fields?.file?.url || '';
+
+          const publishedDate = new Date(fields.publishedDate).toLocaleDateString('id-ID', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+
+          const card = document.createElement('div');
+          card.className = 'blog-card';
+          card.onclick = () => window.location.href = `blog-detail.html?slug=${fields.slug}`;
+
+          card.innerHTML = `
+            ${imageUrl ? `<img src="https:${imageUrl}" alt="${fields.title}" class="blog-card-image">` : ''}
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-card-date">
+                  <i class="far fa-calendar"></i>
+                  ${publishedDate}
+                </span>
+                ${fields.author ? `
+                  <span class="blog-card-author">
+                    <i class="far fa-user"></i>
+                    ${fields.author}
+                  </span>
+                ` : ''}
+              </div>
+              <h3 class="blog-card-title">${fields.title}</h3>
+              ${fields.excerpt ? `<p class="blog-card-excerpt">${fields.excerpt}</p>` : ''}
+              <div class="blog-card-footer">
+                ${fields.tags ? `
+                  <div class="blog-card-tags">
+                    ${fields.tags.slice(0, 2).map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                  </div>
+                ` : ''}
+                <a href="blog-detail.html?slug=${fields.slug}" class="read-more">
+                  ${translations[currentLanguage]['blog.readmore']} <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          `;
+
+          blogGrid.appendChild(card);
+        });
+      }
+
+      // Load blog posts on page load
+      document.addEventListener('DOMContentLoaded', fetchBlogPosts);
+    </script>
+  </body>
+</html>
