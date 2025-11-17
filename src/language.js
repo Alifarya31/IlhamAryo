@@ -53,6 +53,18 @@ const translations = {
     // Karya & Kegiatan
     'karya.title': 'Karya & Kegiatan',
 
+    // Certificates Section
+    'certificates.title': 'Sertifikat',
+    'certificates.view': 'Lihat',
+    'certificates.cert1.title': 'Sertifikat 1',
+    'certificates.cert1.desc': 'Deskripsi sertifikat',
+    'certificates.cert2.title': 'Sertifikat 2',
+    'certificates.cert2.desc': 'Deskripsi sertifikat',
+    'certificates.cert3.title': 'Sertifikat 3',
+    'certificates.cert3.desc': 'Deskripsi sertifikat',
+    'certificates.cert4.title': 'Sertifikat 4',
+    'certificates.cert4.desc': 'Deskripsi sertifikat',
+
     // Contact Section
     'contact.title': 'Hubungi',
     'contact.title.span': 'Saya',
@@ -117,6 +129,18 @@ const translations = {
 
     // Karya & Kegiatan
     'karya.title': 'Works & Activities',
+
+    // Certificates Section
+    'certificates.title': 'Certificates',
+    'certificates.view': 'View',
+    'certificates.cert1.title': 'Certificate 1',
+    'certificates.cert1.desc': 'Certificate Description',
+    'certificates.cert2.title': 'Certificate 2',
+    'certificates.cert2.desc': 'Certificate Description',
+    'certificates.cert3.title': 'Certificate 3',
+    'certificates.cert3.desc': 'Certificate Description',
+    'certificates.cert4.title': 'Certificate 4',
+    'certificates.cert4.desc': 'Certificate Description',
 
     // Contact Section
     'contact.title': 'Get In',
