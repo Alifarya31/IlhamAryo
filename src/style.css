@@ -1348,6 +1348,8 @@ form .btn {
   section {
     max-width: 100vw;
     overflow-x: hidden;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 
   .home, .about, .contact {
@@ -1355,16 +1357,19 @@ form .btn {
     overflow-x: hidden;
     padding-left: 15px;
     padding-right: 15px;
+    touch-action: pan-y;
   }
 
   .home .content, .about .content {
     max-width: 100%;
     overflow-x: hidden;
+    touch-action: pan-y;
   }
 
   img {
     max-width: 100%;
     height: auto;
+    touch-action: pan-y;
   }
 
   .certification {
@@ -1372,6 +1377,7 @@ form .btn {
     max-width: 100vw;
     overflow-x: hidden;
     overflow-y: visible;
+    touch-action: pan-y;
   }
 
   .video-grid-container {
@@ -1385,21 +1391,37 @@ form .btn {
   .video-card {
     max-width: 100%;
     overflow: hidden;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .custom-video-player {
     max-height: 500px !important;
     overflow: hidden;
+    touch-action: pan-y !important;
   }
 
   .video-card-body {
     overflow: hidden;
     max-height: 500px;
+    touch-action: pan-y !important;
+    pointer-events: auto;
   }
 
   .video-player {
     object-fit: contain;
     max-height: 500px;
+    touch-action: manipulation;
+  }
+
+  .video-controls {
+    touch-action: manipulation;
+    pointer-events: auto;
+  }
+
+  .video-card-header,
+  .video-card-footer {
+    touch-action: pan-y !important;
   }
 
   /* Certificates responsive */
@@ -1407,6 +1429,7 @@ form .btn {
     padding: 60px 15px;
     max-width: 100vw;
     overflow-x: hidden;
+    touch-action: pan-y;
   }
 
   .certificates .title h2 {
@@ -1417,6 +1440,11 @@ form .btn {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 10px;
+    touch-action: pan-y;
+  }
+
+  .certificate-card {
+    touch-action: pan-y;
   }
 
   .video-card-header {
