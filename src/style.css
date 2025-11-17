@@ -1371,6 +1371,7 @@ form .btn {
     padding: 60px 15px 30px 15px;
     max-width: 100vw;
     overflow-x: hidden;
+    overflow-y: visible;
   }
 
   .video-grid-container {
@@ -1378,10 +1379,27 @@ form .btn {
     gap: 20px;
     padding: 10px;
     max-width: 100%;
+    overflow: visible;
   }
 
   .video-card {
     max-width: 100%;
+    overflow: hidden;
+  }
+
+  .custom-video-player {
+    max-height: 500px !important;
+    overflow: hidden;
+  }
+
+  .video-card-body {
+    overflow: hidden;
+    max-height: 500px;
+  }
+
+  .video-player {
+    object-fit: contain;
+    max-height: 500px;
   }
 
   /* Certificates responsive */
