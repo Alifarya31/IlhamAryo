@@ -2,30 +2,30 @@
 const translations = {
   id: {
     // Navbar
-    'nav.home': 'Home',
-    'nav.about': 'About',
+    'nav.home': 'Beranda',
+    'nav.about': 'Tentang',
     'nav.karya': 'Karya & Kegiatan',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Proyek',
     'nav.blog': 'Blog',
-    'nav.contact': 'Contact me',
+    'nav.contact': 'Kontak Saya',
 
     // Home Section
-    'home.greeting': 'Hi There 👋',
-    'home.im': "I'm",
+    'home.greeting': 'Halo 👋',
+    'home.im': 'Saya',
     'home.typing1': 'Mahasiswa S2 Qur\'an dan Sunnah',
     'home.typing2': 'Khatib',
     'home.typing3': 'Pengajar Ma\'had',
-    'home.cta': 'Get in touch',
+    'home.cta': 'Hubungi Saya',
 
     // About Section
-    'about.title': 'About',
-    'about.me': 'Me',
-    'about.greeting': "I'm Ilham Aryo Prasetyo",
+    'about.title': 'Tentang',
+    'about.me': 'Saya',
+    'about.greeting': 'Saya Ilham Aryo Prasetyo',
     'about.tagline': 'Mahasiswa S2 Quran dan Sunnah IIUM Malaysia & Pengajar Ma\'had',
     'about.description': 'Saya adalah mahasiswa S2 Program Qur\'an dan Sunnah di International Islamic University Malaysia (IIUM) serta alumnus Pesantren Yatim Ibnu Taimiyyah Bogor. Sebelum melanjutkan studi ke Malaysia, saya aktif sebagai khatib di berbagai masjid di Bekasi, termasuk Masjid At-Taqwa Perum Mahkota Indah.',
-    'about.email': 'Email :',
-    'about.place': 'Place :',
-    'about.location': 'Bekasi, West Java, Indonesia',
+    'about.email': 'Email:',
+    'about.place': 'Tempat:',
+    'about.location': 'Bekasi, Jawa Barat, Indonesia',
     'about.skills': 'Keahlian & Aktivitas',
     'about.download': 'Download CV',
 
@@ -54,15 +54,15 @@ const translations = {
     'karya.title': 'Karya & Kegiatan',
 
     // Contact Section
-    'contact.title': 'Get In',
-    'contact.title.span': 'Touch',
-    'contact.description': 'Although I\'m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I\'ll try my best to get back to you!',
-    'contact.button': 'Say Hello',
+    'contact.title': 'Hubungi',
+    'contact.title.span': 'Saya',
+    'contact.description': 'Meskipun saat ini saya tidak sedang mencari peluang baru, kotak masuk saya selalu terbuka. Baik Anda memiliki pertanyaan atau hanya ingin menyapa, saya akan berusaha sebaik mungkin untuk membalas Anda!',
+    'contact.button': 'Kirim Pesan',
 
     // Footer
     'footer.tagline': 'Terima kasih telah mengunjungi website portfolio saya.',
-    'footer.links': 'Useful Links',
-    'footer.contact': 'Contact',
+    'footer.links': 'Tautan Berguna',
+    'footer.contact': 'Kontak',
   },
 
   en: {
@@ -201,6 +201,12 @@ let currentLanguage = localStorage.getItem('language') || 'id';
 
 // Function to change language
 function changeLanguage(lang) {
+  // Check if Arabic is clicked - show coming soon message
+  if (lang === 'ar') {
+    alert('قريباً - Coming Soon\n\nThe Arabic version is currently under development.');
+    return;
+  }
+
   currentLanguage = lang;
   localStorage.setItem('language', lang);
 

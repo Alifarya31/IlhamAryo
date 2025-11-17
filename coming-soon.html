@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon - Ilham Aryo Prasetyo</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #0ef;
+        --secondary-color: #081b29;
+        --text-color: #ededed;
+        --bg-color: #081b29;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .coming-soon-container {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .coming-soon-content {
+        text-align: center;
+        max-width: 800px;
+      }
+
+      .icon-wrapper {
+        margin-bottom: 2rem;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .icon-wrapper i {
+        font-size: 8rem;
+        color: var(--primary-color);
+        text-shadow: 0 0 20px var(--primary-color),
+                     0 0 40px var(--primary-color);
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, var(--primary-color), #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          filter: drop-shadow(0 0 5px var(--primary-color));
+        }
+        to {
+          filter: drop-shadow(0 0 20px var(--primary-color));
+        }
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+      }
+
+      .description {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: rgba(237, 237, 237, 0.8);
+        line-height: 1.8;
+      }
+
+      .btn-home {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 40px;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-home::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-color);
+        transition: left 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn-home:hover::before {
+        left: 0;
+      }
+
+      .btn-home:hover {
+        color: var(--bg-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 238, 255, 0.3);
+      }
+
+      .language-switcher {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        z-index: 1000;
+        display: flex;
+        gap: 10px;
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(0, 238, 255, 0.3);
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .lang-btn:hover,
+      .lang-btn.active {
+        background: rgba(0, 238, 255, 0.2);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .lang-btn img {
+        display: block;
+      }
+
+      .construction-icon {
+        display: inline-block;
+        animation: rotate 4s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+
+        .icon-wrapper i {
+          font-size: 5rem;
+        }
+
+        .language-switcher {
+          top: 20px;
+          right: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        .btn-home {
+          padding: 12px 30px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+      <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
+        <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+      </button>
+      <button class="lang-btn" data-lang="en" title="English">
+        <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+      </button>
+    </div>
+
+    <!-- Coming Soon Content -->
+    <div class="coming-soon-container">
+      <div class="coming-soon-content">
+        <div class="icon-wrapper">
+          <i class="fas fa-blog"></i>
+        </div>
+
+        <h1 data-translate="coming.title">Coming Soon</h1>
+
+        <h2>
+          <span class="construction-icon">🚧</span>
+          <span data-translate="coming.subtitle">Blog Sedang Dalam Pengembangan</span>
+          <span class="construction-icon">🚧</span>
+        </h2>
+
+        <p class="description" data-translate="coming.description">
+          Saya sedang mempersiapkan konten-konten menarik seputar kajian Islam,
+          pemikiran agama, dan pengalaman studi. Nantikan artikel-artikel
+          bermanfaat yang akan segera hadir!
+        </p>
+
+        <a href="index.html" class="btn-home">
+          <i class="fas fa-home"></i>
+          <span data-translate="coming.button">Kembali ke Beranda</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Particles.js Configuration
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: '#0ef'
+          },
+          shape: {
+            type: 'circle'
+          },
+          opacity: {
+            value: 0.5,
+            random: false
+          },
+          size: {
+            value: 3,
+            random: true
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#0ef',
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'grab'
+            },
+            onclick: {
+              enable: true,
+              mode: 'push'
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            push: {
+              particles_nb: 4
+            }
+          }
+        },
+        retina_detect: true
+      });
+
+      // Translations
+      const translations = {
+        id: {
+          'coming.title': 'Segera Hadir',
+          'coming.subtitle': 'Blog Sedang Dalam Pengembangan',
+          'coming.description': 'Saya sedang mempersiapkan konten-konten menarik seputar kajian Islam, pemikiran agama, dan pengalaman studi. Nantikan artikel-artikel bermanfaat yang akan segera hadir!',
+          'coming.button': 'Kembali ke Beranda'
+        },
+        en: {
+          'coming.title': 'Coming Soon',
+          'coming.subtitle': 'Blog Under Development',
+          'coming.description': 'I am preparing interesting content about Islamic studies, religious thoughts, and study experiences. Stay tuned for beneficial articles coming soon!',
+          'coming.button': 'Back to Home'
+        }
+      };
+
+      // Get saved language or default to Indonesian
+      let currentLanguage = localStorage.getItem('language') || 'id';
+
+      // Function to change language
+      function changeLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+
+        // Update all elements with data-translate attribute
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Update active language button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+      }
+
+      // Initialize language on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        changeLanguage(currentLanguage);
+
+        // Add event listeners to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
