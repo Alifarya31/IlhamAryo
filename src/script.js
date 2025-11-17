@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // typing text hero
-  const typed = new Typed(".typing-text", {
-    strings: ["Da'i", "Pengajar Islam", "Mahasiswa STDI Imam Syafii Jember"],
-    loop: true,
-    typeSpeed: 55,
-    backSpeed: 25,
-    backDelay: 500,
-  });
+  // typing text hero - handled by language.js for multi-language support
 
   // auto hide navbar click
   $(".click-trigger").click(function () {
@@ -25,14 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // fetchData API
   async function fetchData(type = "certification") {
-    let response;
-    if (type === "certification") {
-      response = await fetch("certification/certification.json");
-    } else {
-      response = await fetch("project/project.json");
+    try {
+      let response;
+      if (type === "certification") {
+        response = await fetch("certification/certification.json");
+      } else {
+        response = await fetch("project/project.json");
+      }
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(`No ${type} data found. This is normal if you haven't added any ${type} yet.`);
+      return [];
     }
-    const data = await response.json();
-    return data;
   }
 
   function showCertification(certification) {
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ".certification .content"
     );
     if (!certificationContainer) return;
+    if (!certification || certification.length === 0) return;
 
     let certificationHTML = "";
     certification.forEach((cert) => {
@@ -63,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showProject(project) {
     const projectContainer = document.querySelector(".project .content");
     if (!projectContainer) return;
+    if (!project || project.length === 0) return;
 
     let projectHTML = "";
     project.slice(0, 90).forEach((proj) => {
@@ -91,9 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
     projectContainer.innerHTML = projectHTML;
   }
 
-  // Fetch certification & project data
-  fetchData("certification").then((data) => showCertification(data));
-  fetchData("project").then((data) => showProject(data));
+  // Fetch certification & project data (only if sections exist)
+  if (document.querySelector(".certification .content")) {
+    fetchData("certification").then((data) => showCertification(data));
+  }
+  if (document.querySelector(".project .content")) {
+    fetchData("project").then((data) => showProject(data));
+  }
 
   // loadmore button
   const loadmore = document.querySelector(".loadmore-btn");

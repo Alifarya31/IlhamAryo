@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="keywords"
-      content="Ilham Aryo Prasetyo, portfolio, personal portfolio, Hukum Keluarga Islam, STDI Imam Syafii Jember, Ma'had Imam Muzani"
+      content="Ilham Aryo Prasetyo, portfolio, personal portfolio, Quran dan Sunnah, IIUM Malaysia, Ma'had Imam Muzani"
     />
     <meta
       name="description"
-      content="Welcome to Ilham Aryo Prasetyo's Portfolio. Mahasiswa Hukum Keluarga Islam & Pengajar Ma'had Imam Muzani"
+      content="Welcome to Ilham Aryo Prasetyo's Portfolio. Mahasiswa S2 Quran dan Sunnah IIUM Malaysia & Pengajar Ma'had Imam Muzani"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -54,26 +54,35 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#home" data-translate="nav.home">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about" data-translate="nav.about">About</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#karya">Karya & Kegiatan</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#project">Projects</a>
+              <a class="nav-link" href="#karya" data-translate="nav.karya">Karya & Kegiatan</a>
             </li>
             <li class="nav-item mx-2">
               <a
                 class="nav-link"
                 target="_blank"
                 href="#"
+                data-translate="nav.blog"
                 >Blog</a
               >
             </li>
           </ul>
+          <div class="language-switcher d-flex align-items-center me-3">
+            <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+            </button>
+            <button class="lang-btn" data-lang="en" title="English">
+              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+            </button>
+            <button class="lang-btn" data-lang="ar" title="العربية">
+              <img src="https://flagcdn.com/w20/sa.png" alt="AR" width="20">
+            </button>
+          </div>
           <form>
             <a
               class="btn"
@@ -81,6 +90,7 @@
               rel="noopener noreferrer"
               target="_blank"
               type="button"
+              data-translate="nav.contact"
               >Contact me</a
             >
           </form>
@@ -96,13 +106,13 @@
       <div class="content d-flex flex-wrap flex-row">
         <div class="intro">
           <h2>
-            Hi There 👋<br />
-            I'm
+            <span data-translate="home.greeting">Hi There 👋</span><br />
+            <span data-translate="home.im">I'm</span>
             <span>Ilham Aryo Prasetyo</span>
           </h2>
           <p>I Am <span class="typing-text"></span></p>
           <a href="#contact" class="btn mt-5 mb-0">
-            <span>Get in touch</span>
+            <span data-translate="home.cta">Get in touch</span>
             <i class="fas fa-arrow-circle-down"></i>
           </a>
           <div class="socials mt-4 position-relative">
@@ -141,8 +151,8 @@
         <div class="title" data-aos="fade-down" data-aos-duration="1000">
           <h2 class="text-center">
             <i class="fas fa-user-alt"></i>
-            About
-            <span>Me</span>
+            <span data-translate="about.title">About</span>
+            <span data-translate="about.me">Me</span>
           </h2>
         </div>
         <div class="content d-flex align-items-center justify-content-center">
@@ -150,37 +160,34 @@
             <img src="assets/img/profileku.jpeg" draggable="false" />
           </div>
           <div class="intro" data-aos="fade-left" data-aos-duration="1000">
-            <h3>I'm Ilham Aryo Prasetyo</h3>
-            <span class="tagline">Mahasiswa Hukum Keluarga Islam & Pengajar Ma'had</span>
-            <p>
-              Saya adalah mahasiswa Semester 8 program Hukum Keluarga Islam (Ahwal Al-Syakhshiyah)
-              di STDI Imam Syafii Jember. Alumnus Pesantren Yatim Ibnu Taimiyyah Bogor.
-              Saat ini aktif sebagai Pengajar di Ma'had Imam Muzani dan menjadi khatib di berbagai masjid,
-              termasuk Masjid At Taqwa Perum Mahkota Indah Kabupaten Bekasi.
+            <h3 data-translate="about.greeting">I'm Ilham Aryo Prasetyo</h3>
+            <span class="tagline" data-translate="about.tagline">Mahasiswa S2 Quran dan Sunnah IIUM Malaysia & Pengajar Ma'had</span>
+            <p data-translate="about.description">
+              Saya adalah mahasiswa S2 Program Qur'an dan Sunnah di International Islamic University Malaysia (IIUM) serta alumnus Pesantren Yatim Ibnu Taimiyyah Bogor. Sebelum melanjutkan studi ke Malaysia, saya aktif sebagai khatib di berbagai masjid di Bekasi, termasuk Masjid At-Taqwa Perum Mahkota Indah.
             </p>
             <div class="hire-me">
               <p>
                 <span>
                   <i class="fa fa-envelope"></i>
-                  Email :
+                  <span data-translate="about.email">Email :</span>
                 </span>
                 ilhamaryo@example.com
               </p>
               <p>
                 <span>
                   <i class="fa fa-map-marked"></i>
-                  Place :
+                  <span data-translate="about.place">Place :</span>
                 </span>
-                Bekasi, West Java, Indonesia
+                <span data-translate="about.location">Bekasi, West Java, Indonesia</span>
               </p>
             </div>
             <div class="cv-btn d-flex flex-column">
               <a href="#skills" class="btn btn-outline-primary">
-                <span>Keahlian & Aktivitas</span>
+                <span data-translate="about.skills">Keahlian & Aktivitas</span>
                 <i class="fas fa-arrow-circle-down"></i>
               </a>
               <a href="#" class="btn btn-outline-primary">
-                <span>Download CV</span>
+                <span data-translate="about.download">Download CV</span>
                 <i class="fas fa-download"></i>
               </a>
             </div>
@@ -192,7 +199,7 @@
           <div class="title" data-aos="fade-down" data-aos-duration="1000">
             <h2>
               <i class="fas fa-mosque"></i>
-              Keahlian & Aktivitas
+              <span data-translate="skills.title">Keahlian & Aktivitas</span>
             </h2>
           </div>
           <div
@@ -200,34 +207,35 @@
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            <h3>Bidang <span>Keilmuan</span></h3>
+            <h3><span data-translate="skills.keilmuan">Bidang</span> <span data-translate="skills.keilmuan.span">Keilmuan</span></h3>
             <div class="content-text">
               <ul>
-                <li><i class="fas fa-check-circle"></i> Hukum Keluarga Islam (Ahwal Al-Syakhshiyah)</li>
-                <li><i class="fas fa-check-circle"></i> Fiqh & Ushul Fiqh</li>
-                <li><i class="fas fa-check-circle"></i> Hadits & Ulumul Hadits</li>
-                <li><i class="fas fa-check-circle"></i> Tafsir Al-Quran</li>
-                <li><i class="fas fa-check-circle"></i> Aqidah Islamiyah</li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.item1">Hukum Keluarga Islam (Ahwal Al-Syakhshiyah)</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.item2">Fiqh & Ushul Fiqh</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.item3">Hadits & Ulumul Hadits</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.item4">Tafsir Al-Quran</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.item5">Aqidah Islamiyah</span></li>
               </ul>
             </div>
           </div>
           <div class="box" data-aos="fade-right" data-aos-duration="1000">
-            <h3>Aktivitas <span>Dakwah</span></h3>
+            <h3><span data-translate="skills.dakwah">Aktivitas</span> <span data-translate="skills.dakwah.span">Dakwah</span></h3>
             <div class="content-text">
               <ul>
-                <li><i class="fas fa-check-circle"></i> Khatib Jumat</li>
-                <li><i class="fas fa-check-circle"></i> Pengajar Ma'had Imam Muzani</li>
-                <li><i class="fas fa-check-circle"></i> Pembicara Kajian Islam</li>
-                <li><i class="fas fa-check-circle"></i> Konseling Keluarga Islami</li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.dakwah1">Khatib Jumat</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.dakwah2">Pengajar Ma'had Imam Muzani</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.dakwah3">Pembicara Kajian Islam</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-translate="skills.dakwah4">Konseling Keluarga Islami</span></li>
               </ul>
             </div>
           </div>
           <div class="box" data-aos="fade-left" data-aos-duration="1000">
-            <h3>Pendidikan <span>Formal</span></h3>
+            <h3><span data-translate="skills.pendidikan">Pendidikan</span> <span data-translate="skills.pendidikan.span">Formal</span></h3>
             <div class="content-text">
               <ul>
-                <li><i class="fas fa-graduation-cap"></i> STDI Imam Syafii Jember</li>
-                <li><i class="fas fa-graduation-cap"></i> Pesantren Yatim Ibnu Taimiyyah Bogor</li>
+                <li><i class="fas fa-graduation-cap"></i> <span data-translate="skills.pendidikan1">S2 Qur'an dan Sunnah, International Islamic University Malaysia (IIUM)</span></li>
+                <li><i class="fas fa-graduation-cap"></i> <span data-translate="skills.pendidikan2">S1 Hukum Keluarga Islam, STDI Imam Syafii Jember</span></li>
+                <li><i class="fas fa-graduation-cap"></i> <span data-translate="skills.pendidikan3">Alumnus Pesantren Yatim Ibnu Taimiyyah Bogor</span></li>
               </ul>
             </div>
           </div>
@@ -235,43 +243,146 @@
       </div>
     </section>
     <section
-      class="certification d-flex flex-column align-items-center justify-content-center"
+      class="certification d-flex flex-column "
       id="karya"
     >
       <div class="title" data-aos="fade-down" data-aos-duration="1000">
         <h2 class="text-center">
           <i class="fa fa-book-open"></i>
-          Karya & Kegiatan
+          <span data-translate="karya.title">Karya & Kegiatan</span>
         </h2>
       </div>
-      <div class="content d-flex flex-wrap justify-content-center">
-        <div class="karya-box" data-aos="fade-up" data-aos-duration="1000">
-          <div class="karya-item">
-            <i class="fas fa-mosque"></i>
-            <h3>Khutbah Jumat</h3>
-            <p>Menyampaikan khutbah di berbagai masjid termasuk Masjid At Taqwa Perum Mahkota Indah, Kabupaten Bekasi dengan tema-tema yang relevan seperti "Merawat Keimanan Pasca Ramadan"</p>
+      <div class="content d-flex flex-wrap justify-content-center align-items-stretch">
+        <!-- Video Card Grid -->
+        <div class="video-grid-container">
+
+          <!-- TikTok Video Card -->
+          <div class="video-card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="video-card-header">
+              <i class="fab fa-tiktok"></i>
+              <h3>TikTok</h3>
+            </div>
+            <div class="video-card-body">
+              <div class="custom-video-player">
+                <video id="tiktok-video" class="video-player" poster="assets/img/video-poster-tiktok.jpg" preload="metadata">
+                  <source src="assets/videos/tiktok1.mp4" type="video/mp4">
+                  <source src="assets/videos/tiktok1.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-pause-btn" aria-label="Play/Pause">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <div class="progress-bar">
+                    <div class="progress-filled"></div>
+                  </div>
+                  <div class="time-display">
+                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                  </div>
+                  <button class="volume-btn" aria-label="Mute/Unmute">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                  <input type="range" class="volume-slider" min="0" max="100" value="100">
+                  <button class="fullscreen-btn" aria-label="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="video-card-footer">
+              <a href="https://www.tiktok.com/@ilham.prasetyo22/video/7212258572867095835" target="_blank" class="btn btn-sm btn-tiktok">
+                <i class="fab fa-tiktok"></i> Lihat di TikTok
+              </a>
+              <a href="https://www.tiktok.com/@ilham.prasetyo22" target="_blank" class="btn btn-sm">
+                <i class="fab fa-tiktok"></i> @ilham.prasetyo22
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="karya-box" data-aos="fade-up" data-aos-duration="1200">
-          <div class="karya-item">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <h3>Pengajaran Ma'had</h3>
-            <p>Aktif sebagai pengajar di Ma'had Imam Muzani, membimbing santri dalam memahami ilmu-ilmu syariah dan hukum Islam</p>
+
+          <!-- Instagram Video Card -->
+          <div class="video-card" data-aos="fade-up" data-aos-duration="1200">
+            <div class="video-card-header">
+              <i class="fab fa-instagram"></i>
+              <h3>Instagram Reels</h3>
+            </div>
+            <div class="video-card-body">
+              <div class="custom-video-player">
+                <video id="instagram-video" class="video-player" poster="assets/img/video-poster.jpg" preload="metadata">
+                  <source src="assets/videos/ig1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-pause-btn" aria-label="Play/Pause">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <div class="progress-bar">
+                    <div class="progress-filled"></div>
+                  </div>
+                  <div class="time-display">
+                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                  </div>
+                  <button class="volume-btn" aria-label="Mute/Unmute">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                  <input type="range" class="volume-slider" min="0" max="100" value="100">
+                  <button class="fullscreen-btn" aria-label="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="video-card-footer">
+              <a href="https://www.instagram.com/reel/CyAEAcAvzc9/" target="_blank" class="btn btn-sm btn-instagram">
+                <i class="fab fa-instagram"></i> Lihat di Instagram
+              </a>
+              <a href="https://www.instagram.com/ilhaamprast/" target="_blank" class="btn btn-sm">
+                <i class="fab fa-instagram"></i> @ilhaamprast
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="karya-box" data-aos="fade-up" data-aos-duration="1400">
-          <div class="karya-item">
-            <i class="fas fa-users"></i>
-            <h3>Kajian Islam</h3>
-            <p>Pembicara dalam berbagai kajian Islam, menyampaikan materi tentang Fiqh, Aqidah, dan Hukum Keluarga Islam kepada masyarakat</p>
+
+          <!-- Instagram Video Card 2 -->
+          <div class="video-card" data-aos="fade-up" data-aos-duration="1400">
+            <div class="video-card-header">
+              <i class="fab fa-instagram"></i>
+              <h3>Instagram Reels</h3>
+            </div>
+            <div class="video-card-body">
+              <div class="custom-video-player">
+                <video id="instagram-video-2" class="video-player" poster="assets/img/video-poster-ig2.jpg" preload="metadata">
+                  <source src="assets/videos/ig2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-pause-btn" aria-label="Play/Pause">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <div class="progress-bar">
+                    <div class="progress-filled"></div>
+                  </div>
+                  <div class="time-display">
+                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                  </div>
+                  <button class="volume-btn" aria-label="Mute/Unmute">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                  <input type="range" class="volume-slider" min="0" max="100" value="100">
+                  <button class="fullscreen-btn" aria-label="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="video-card-footer">
+              <a href="https://www.instagram.com/reel/Cmfb-CHoBHC/" target="_blank" class="btn btn-sm btn-instagram">
+                <i class="fab fa-instagram"></i> Lihat di Instagram
+              </a>
+              <a href="https://www.instagram.com/ilhaamprast/" target="_blank" class="btn btn-sm">
+                <i class="fab fa-instagram"></i> @ilhaamprast
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="karya-box" data-aos="fade-up" data-aos-duration="1600">
-          <div class="karya-item">
-            <i class="fas fa-heart"></i>
-            <h3>Konseling Keluarga</h3>
-            <p>Memberikan bimbingan dan konseling keluarga Islami sesuai dengan keilmuan Ahwal Al-Syakhshiyah (Hukum Keluarga Islam)</p>
-          </div>
+
         </div>
       </div>
     </section>
@@ -314,11 +425,11 @@
       class="contact d-flex flex-column align-items-center justify-content-center text-center"
     >
       <h2 class="title" data-aos="fade-down" data-aos-duration="1000">
-        Get In <span>Touch</span>
+        <span data-translate="contact.title">Get In</span> <span data-translate="contact.title.span">Touch</span>
       </h2>
-      <p data-aos="fade-down" data-aos-duration="1000">
-        Although I’m not currently looking for any new opportunities, my inbox
-        is always open. Whether you have a question or just want to say hi, I’ll
+      <p data-aos="fade-down" data-aos-duration="1000" data-translate="contact.description">
+        Although I'm not currently looking for any new opportunities, my inbox
+        is always open. Whether you have a question or just want to say hi, I'll
         try my best to get back to you!
       </p>
       <a
@@ -328,7 +439,7 @@
         href="mailto:ilhamaryo@example.com"
         rel="noopener noreferrer"
         target="_blank"
-        >Say Hello
+        ><span data-translate="contact.button">Say Hello</span>
         <i class="fa fa-envelope"></i>
       </a>
     </section>
@@ -338,33 +449,29 @@
         <div class="content d-flex flex-column">
           <img src="assets/img/logo ilham.jpg" alt="Logo Ilham" style="width: 60px; height: 60px; border-radius: 10px;" />
           <h3>Ilham's Portfolio</h3>
-          <p>Terima kasih telah mengunjungi website portfolio saya.</p>
+          <p data-translate="footer.tagline">Terima kasih telah mengunjungi website portfolio saya.</p>
         </div>
         <div class="content d-flex flex-column">
-          <h3>Useful Links</h3>
+          <h3 data-translate="footer.links">Useful Links</h3>
           <a href="#home">
             <i class="fa fa-arrow-circle-right"></i>
-            Home</a
+            <span data-translate="nav.home">Home</span></a
           >
           <a href="#about">
             <i class="fa fa-arrow-circle-right"></i>
-            About</a
+            <span data-translate="nav.about">About</span></a
           >
           <a href="#karya">
             <i class="fa fa-arrow-circle-right"></i>
-            Karya & Kegiatan</a
-          >
-          <a href="#project">
-            <i class="fa fa-arrow-circle-right"></i>
-            Projects</a
+            <span data-translate="nav.karya">Karya & Kegiatan</span></a
           >
           <a href="#">
             <i class="fa fa-arrow-circle-right"></i>
-            Blog</a
+            <span data-translate="nav.blog">Blog</span></a
           >
         </div>
         <div class="content d-flex flex-column">
-          <h4>Contact</h4>
+          <h4 data-translate="footer.contact">Contact</h4>
           <a
             href="mailto:ilhamaryo@example.com"
             rel="noopener noreferrer"
@@ -374,12 +481,12 @@
             ilhamaryo@example.com</a
           >
           <a
-            href="https://wa.me/089646489202"
+            href="https://wa.me/6281213935164"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <i class="fas fa-envelope"></i>
-            089646489202</a
+            <i class="fab fa-whatsapp"></i>
+            081213935164</a
           >
           <a>
             <i class="fas fa-map-marked-alt"></i>
@@ -435,5 +542,9 @@
     <script src="src/particle.js"></script>
     <script src="src/app.js"></script>
     <script src="src/script.js"></script>
+    <script src="src/language.js"></script>
+
+    <!-- Video Player Script -->
+    <script src="src/video-player.js"></script>
   </body>
 </html>
