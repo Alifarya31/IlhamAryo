@@ -497,6 +497,9 @@
     <!-- Contentful Config -->
     <script src="src/contentful-config.js"></script>
 
+    <!-- Blog Translations -->
+    <script src="src/blog-translations.js"></script>
+
     <!-- Marked.js for Markdown Rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -593,6 +596,11 @@
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           changeLanguage(this.getAttribute('data-lang'));
+          // Reload article with new language
+          document.getElementById('articleContent').innerHTML = '';
+          document.getElementById('loading').style.display = 'block';
+          document.getElementById('errorState').style.display = 'none';
+          fetchArticle();
         });
       });
 
@@ -710,6 +718,23 @@
       function displayArticle(article, includes) {
         const fields = article.fields;
         const assets = includes?.Asset || [];
+        const slug = fields.slug;
+
+        // Check if translation exists for current language
+        const translation = getTranslatedArticle(slug, currentLanguage);
+
+        // Use translation if available, otherwise use Contentful data
+        const title = translation?.title || fields.title;
+        const author = translation?.author || fields.author;
+        const tags = translation?.tags || fields.tags;
+
+        // For content, use translation if available, otherwise render rich text from Contentful
+        let contentHtml;
+        if (translation?.content) {
+          contentHtml = translation.content;
+        } else {
+          contentHtml = renderRichText(fields.content);
+        }
 
         // Get featured image
         const featuredImageId = fields.featuredImage?.sys?.id;
@@ -717,47 +742,47 @@
         const imageUrl = featuredImage?.fields?.file?.url || '';
 
         // Format date
-        const publishedDate = new Date(fields.publishedDate).toLocaleDateString('id-ID', {
+        const publishedDate = new Date(fields.publishedDate).toLocaleDateString(currentLanguage === 'id' ? 'id-ID' : 'en-US', {
           year: 'numeric',
           month: 'long',
           day: 'numeric'
         });
 
-        // Render content
-        const contentHtml = renderRichText(fields.content);
+        // Reading time text
+        const readingTimeText = currentLanguage === 'id' ? 'menit baca' : 'min read';
 
         // Update page title
-        document.title = `${fields.title} - Ilham Aryo Prasetyo`;
+        document.title = `${title} - Ilham Aryo Prasetyo`;
 
         // Build article HTML
         const articleHtml = `
           <div class="article-header">
-            <h1 class="article-title">${fields.title}</h1>
+            <h1 class="article-title">${title}</h1>
             <div class="article-meta">
               <span class="article-meta-item">
                 <i class="far fa-calendar"></i>
                 ${publishedDate}
               </span>
-              ${fields.author ? `
+              ${author ? `
                 <span class="article-meta-item">
                   <i class="far fa-user"></i>
-                  ${fields.author}
+                  ${author}
                 </span>
               ` : ''}
               ${fields.readingTime ? `
                 <span class="article-meta-item">
                   <i class="far fa-clock"></i>
-                  ${fields.readingTime} menit baca
+                  ${fields.readingTime} ${readingTimeText}
                 </span>
               ` : ''}
             </div>
-            ${fields.tags ? `
+            ${tags ? `
               <div class="article-tags">
-                ${fields.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+                ${tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
               </div>
             ` : ''}
           </div>
-          ${imageUrl ? `<img src="https:${imageUrl}" alt="${fields.title}" class="article-featured-image">` : ''}
+          ${imageUrl ? `<img src="https:${imageUrl}" alt="${title}" class="article-featured-image">` : ''}
           <div class="article-content">
             ${contentHtml}
           </div>

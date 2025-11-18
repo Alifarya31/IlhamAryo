@@ -447,6 +447,9 @@
     <!-- Contentful Config -->
     <script src="src/contentful-config.js"></script>
 
+    <!-- Blog Translations -->
+    <script src="src/blog-translations.js"></script>
+
     <script>
       // Particles.js Configuration
       particlesJS('particles-js', {
@@ -544,6 +547,10 @@
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           changeLanguage(this.getAttribute('data-lang'));
+          // Reload blog posts with new language
+          document.getElementById('blogGrid').innerHTML = '';
+          document.getElementById('loading').style.display = 'block';
+          fetchBlogPosts();
         });
       });
 
@@ -582,11 +589,22 @@
 
         posts.forEach(post => {
           const fields = post.fields;
+          const slug = fields.slug;
+
+          // Check if translation exists for current language
+          const translation = getTranslatedArticle(slug, currentLanguage);
+
+          // Use translation if available, otherwise use Contentful data
+          const title = translation?.title || fields.title;
+          const excerpt = translation?.excerpt || fields.excerpt;
+          const author = translation?.author || fields.author;
+          const tags = translation?.tags || fields.tags;
+
           const featuredImageId = fields.featuredImage?.sys?.id;
           const featuredImage = assets.find(asset => asset.sys.id === featuredImageId);
           const imageUrl = featuredImage?.fields?.file?.url || '';
 
-          const publishedDate = new Date(fields.publishedDate).toLocaleDateString('id-ID', {
+          const publishedDate = new Date(fields.publishedDate).toLocaleDateString(currentLanguage === 'id' ? 'id-ID' : 'en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -594,32 +612,32 @@
 
           const card = document.createElement('div');
           card.className = 'blog-card';
-          card.onclick = () => window.location.href = `blog-detail.html?slug=${fields.slug}`;
+          card.onclick = () => window.location.href = `blog-detail.html?slug=${slug}`;
 
           card.innerHTML = `
-            ${imageUrl ? `<img src="https:${imageUrl}" alt="${fields.title}" class="blog-card-image">` : ''}
+            ${imageUrl ? `<img src="https:${imageUrl}" alt="${title}" class="blog-card-image">` : ''}
             <div class="blog-card-content">
               <div class="blog-card-meta">
                 <span class="blog-card-date">
                   <i class="far fa-calendar"></i>
                   ${publishedDate}
                 </span>
-                ${fields.author ? `
+                ${author ? `
                   <span class="blog-card-author">
                     <i class="far fa-user"></i>
-                    ${fields.author}
+                    ${author}
                   </span>
                 ` : ''}
               </div>
-              <h3 class="blog-card-title">${fields.title}</h3>
-              ${fields.excerpt ? `<p class="blog-card-excerpt">${fields.excerpt}</p>` : ''}
+              <h3 class="blog-card-title">${title}</h3>
+              ${excerpt ? `<p class="blog-card-excerpt">${excerpt}</p>` : ''}
               <div class="blog-card-footer">
-                ${fields.tags ? `
+                ${tags ? `
                   <div class="blog-card-tags">
-                    ${fields.tags.slice(0, 2).map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                    ${tags.slice(0, 2).map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
                   </div>
                 ` : ''}
-                <a href="blog-detail.html?slug=${fields.slug}" class="read-more">
+                <a href="blog-detail.html?slug=${slug}" class="read-more">
                   ${translations[currentLanguage]['blog.readmore']} <i class="fas fa-arrow-right"></i>
                 </a>
               </div>
