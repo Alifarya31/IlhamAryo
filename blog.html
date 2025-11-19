@@ -41,7 +41,7 @@
       }
 
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         background: var(--bg-color);
         color: var(--text-color);
         overflow-x: hidden;
@@ -372,7 +372,12 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="assets/img/logo ilham.jpg" alt="Logo Ilham" width="40" height="40">
+          <img
+            src="assets/img/logo ilham.jpg"
+            alt="Logo Ilham"
+            width="40"
+            height="40"
+          />
         </a>
 
         <button
@@ -387,25 +392,49 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#home" data-translate="nav.home">Home</a>
+              <a
+                class="nav-link"
+                href="index.html#home"
+                data-translate="nav.home"
+                >Home</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+              <a
+                class="nav-link"
+                href="index.html#about"
+                data-translate="nav.about"
+                >About</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#karya" data-translate="nav.karya">Karya & Kegiatan</a>
+              <a
+                class="nav-link"
+                href="index.html#karya"
+                data-translate="nav.karya"
+                >Karya & Kegiatan</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link active" href="blog.html" data-translate="nav.blog">Blog</a>
+              <a
+                class="nav-link active"
+                href="blog.html"
+                data-translate="nav.blog"
+                >Blog</a
+              >
             </li>
           </ul>
 
           <div class="language-switcher">
-            <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
-              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+            <button
+              class="lang-btn active"
+              data-lang="id"
+              title="Bahasa Indonesia"
+            >
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20" />
             </button>
             <button class="lang-btn" data-lang="en" title="English">
-              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20" />
             </button>
           </div>
         </div>
@@ -417,7 +446,9 @@
       <div class="container">
         <div class="blog-header">
           <h1 data-translate="blog.title">Blog</h1>
-          <p data-translate="blog.subtitle">Berbagi pemikiran, kajian, dan pengalaman</p>
+          <p data-translate="blog.subtitle">
+            Berbagi renungan, kajian, dan pengalaman
+          </p>
         </div>
 
         <!-- Loading State -->
@@ -430,10 +461,12 @@
         <div id="blogGrid" class="blog-grid"></div>
 
         <!-- Empty State -->
-        <div id="emptyState" class="empty-state" style="display: none;">
+        <div id="emptyState" class="empty-state" style="display: none">
           <i class="fas fa-inbox"></i>
           <h3 data-translate="blog.empty.title">Belum Ada Artikel</h3>
-          <p data-translate="blog.empty.message">Artikel akan segera hadir. Nantikan konten-konten menarik!</p>
+          <p data-translate="blog.empty.message">
+            Artikel akan segera hadir. Nantikan konten-konten menarik!
+          </p>
         </div>
       </div>
     </div>
@@ -452,104 +485,106 @@
 
     <script>
       // Particles.js Configuration
-      particlesJS('particles-js', {
+      particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: '#0ef' },
-          shape: { type: 'circle' },
+          color: { value: "#0ef" },
+          shape: { type: "circle" },
           opacity: { value: 0.5, random: false },
           size: { value: 3, random: true },
           line_linked: {
             enable: true,
             distance: 150,
-            color: '#0ef',
+            color: "#0ef",
             opacity: 0.4,
-            width: 1
+            width: 1,
           },
           move: {
             enable: true,
             speed: 2,
-            direction: 'none',
+            direction: "none",
             random: false,
             straight: false,
-            out_mode: 'out',
-            bounce: false
-          }
+            out_mode: "out",
+            bounce: false,
+          },
         },
         interactivity: {
-          detect_on: 'canvas',
+          detect_on: "canvas",
           events: {
-            onhover: { enable: true, mode: 'grab' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
           },
           modes: {
             grab: { distance: 140, line_linked: { opacity: 1 } },
-            push: { particles_nb: 4 }
-          }
+            push: { particles_nb: 4 },
+          },
         },
-        retina_detect: true
+        retina_detect: true,
       });
 
       // Translations
       const translations = {
         id: {
-          'nav.home': 'Beranda',
-          'nav.about': 'Tentang',
-          'nav.karya': 'Karya & Kegiatan',
-          'nav.blog': 'Blog',
-          'blog.title': 'Blog',
-          'blog.subtitle': 'Berbagi pemikiran, kajian, dan pengalaman',
-          'blog.loading': 'Memuat artikel...',
-          'blog.empty.title': 'Belum Ada Artikel',
-          'blog.empty.message': 'Artikel akan segera hadir. Nantikan konten-konten menarik!',
-          'blog.readmore': 'Baca Selengkapnya'
+          "nav.home": "Beranda",
+          "nav.about": "Tentang",
+          "nav.karya": "Karya & Kegiatan",
+          "nav.blog": "Blog",
+          "blog.title": "Blog",
+          "blog.subtitle": "Berbagi pemikiran, kajian, dan pengalaman",
+          "blog.loading": "Memuat artikel...",
+          "blog.empty.title": "Belum Ada Artikel",
+          "blog.empty.message":
+            "Artikel akan segera hadir. Nantikan konten-konten menarik!",
+          "blog.readmore": "Baca Selengkapnya",
         },
         en: {
-          'nav.home': 'Home',
-          'nav.about': 'About',
-          'nav.karya': 'Works & Activities',
-          'nav.blog': 'Blog',
-          'blog.title': 'Blog',
-          'blog.subtitle': 'Sharing thoughts, studies, and experiences',
-          'blog.loading': 'Loading articles...',
-          'blog.empty.title': 'No Articles Yet',
-          'blog.empty.message': 'Articles coming soon. Stay tuned for interesting content!',
-          'blog.readmore': 'Read More'
-        }
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.karya": "Works & Activities",
+          "nav.blog": "Blog",
+          "blog.title": "Blog",
+          "blog.subtitle": "Sharing reflections, studies, and experiences",
+          "blog.loading": "Loading articles...",
+          "blog.empty.title": "No Articles Yet",
+          "blog.empty.message":
+            "Articles coming soon. Stay tuned for interesting content!",
+          "blog.readmore": "Read More",
+        },
       };
 
       // Get saved language or default to Indonesian
-      let currentLanguage = localStorage.getItem('language') || 'id';
+      let currentLanguage = localStorage.getItem("language") || "id";
 
       // Function to change language
       function changeLanguage(lang) {
         currentLanguage = lang;
-        localStorage.setItem('language', lang);
+        localStorage.setItem("language", lang);
 
-        document.querySelectorAll('[data-translate]').forEach(element => {
-          const key = element.getAttribute('data-translate');
+        document.querySelectorAll("[data-translate]").forEach((element) => {
+          const key = element.getAttribute("data-translate");
           if (translations[lang] && translations[lang][key]) {
             element.textContent = translations[lang][key];
           }
         });
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-          btn.classList.remove('active');
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.remove("active");
         });
-        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+        document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
       }
 
       // Initialize language
       changeLanguage(currentLanguage);
 
       // Language button listeners
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          changeLanguage(this.getAttribute('data-lang'));
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          changeLanguage(this.getAttribute("data-lang"));
           // Reload blog posts with new language
-          document.getElementById('blogGrid').innerHTML = '';
-          document.getElementById('loading').style.display = 'block';
+          document.getElementById("blogGrid").innerHTML = "";
+          document.getElementById("loading").style.display = "block";
           fetchBlogPosts();
         });
       });
@@ -562,32 +597,32 @@
           );
 
           if (!response.ok) {
-            throw new Error('Failed to fetch blog posts');
+            throw new Error("Failed to fetch blog posts");
           }
 
           const data = await response.json();
 
           // Hide loading
-          document.getElementById('loading').style.display = 'none';
+          document.getElementById("loading").style.display = "none";
 
           if (data.items && data.items.length > 0) {
             displayBlogPosts(data.items, data.includes);
           } else {
-            document.getElementById('emptyState').style.display = 'block';
+            document.getElementById("emptyState").style.display = "block";
           }
         } catch (error) {
-          console.error('Error fetching blog posts:', error);
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('emptyState').style.display = 'block';
+          console.error("Error fetching blog posts:", error);
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("emptyState").style.display = "block";
         }
       }
 
       // Display blog posts
       function displayBlogPosts(posts, includes) {
-        const blogGrid = document.getElementById('blogGrid');
+        const blogGrid = document.getElementById("blogGrid");
         const assets = includes?.Asset || [];
 
-        posts.forEach(post => {
+        posts.forEach((post) => {
           const fields = post.fields;
           const slug = fields.slug;
 
@@ -601,44 +636,66 @@
           const tags = translation?.tags || fields.tags;
 
           const featuredImageId = fields.featuredImage?.sys?.id;
-          const featuredImage = assets.find(asset => asset.sys.id === featuredImageId);
-          const imageUrl = featuredImage?.fields?.file?.url || '';
+          const featuredImage = assets.find(
+            (asset) => asset.sys.id === featuredImageId
+          );
+          const imageUrl = featuredImage?.fields?.file?.url || "";
 
-          const publishedDate = new Date(fields.publishedDate).toLocaleDateString(currentLanguage === 'id' ? 'id-ID' : 'en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+          const publishedDate = new Date(
+            fields.publishedDate
+          ).toLocaleDateString(currentLanguage === "id" ? "id-ID" : "en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           });
 
-          const card = document.createElement('div');
-          card.className = 'blog-card';
-          card.onclick = () => window.location.href = `blog-detail.html?slug=${slug}`;
+          const card = document.createElement("div");
+          card.className = "blog-card";
+          card.onclick = () =>
+            (window.location.href = `blog-detail.html?slug=${slug}`);
 
           card.innerHTML = `
-            ${imageUrl ? `<img src="https:${imageUrl}" alt="${title}" class="blog-card-image">` : ''}
+            ${
+              imageUrl
+                ? `<img src="https:${imageUrl}" alt="${title}" class="blog-card-image">`
+                : ""
+            }
             <div class="blog-card-content">
               <div class="blog-card-meta">
                 <span class="blog-card-date">
                   <i class="far fa-calendar"></i>
                   ${publishedDate}
                 </span>
-                ${author ? `
+                ${
+                  author
+                    ? `
                   <span class="blog-card-author">
                     <i class="far fa-user"></i>
                     ${author}
                   </span>
-                ` : ''}
+                `
+                    : ""
+                }
               </div>
               <h3 class="blog-card-title">${title}</h3>
-              ${excerpt ? `<p class="blog-card-excerpt">${excerpt}</p>` : ''}
+              ${excerpt ? `<p class="blog-card-excerpt">${excerpt}</p>` : ""}
               <div class="blog-card-footer">
-                ${tags ? `
+                ${
+                  tags
+                    ? `
                   <div class="blog-card-tags">
-                    ${tags.slice(0, 2).map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                    ${tags
+                      .slice(0, 2)
+                      .map((tag) => `<span class="blog-tag">${tag}</span>`)
+                      .join("")}
                   </div>
-                ` : ''}
+                `
+                    : ""
+                }
                 <a href="blog-detail.html?slug=${slug}" class="read-more">
-                  ${translations[currentLanguage]['blog.readmore']} <i class="fas fa-arrow-right"></i>
+                  ${
+                    translations[currentLanguage]["blog.readmore"]
+                  } <i class="fas fa-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -649,7 +706,7 @@
       }
 
       // Load blog posts on page load
-      document.addEventListener('DOMContentLoaded', fetchBlogPosts);
+      document.addEventListener("DOMContentLoaded", fetchBlogPosts);
     </script>
   </body>
 </html>
