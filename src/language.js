@@ -67,7 +67,7 @@ const translations = {
     "karyaTulis.title1": "Terjemah Bahjatu Atthulab",
     "karyaTulis.excerpt1":
       "Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syekh Dr. Shalih bin Hamd al-Ushaimy rahimahullah.",
-    "karyaTulis.category2": "Karya Tulis",
+    "karyaTulis.category2": "Terjemahan",
     "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
     "karyaTulis.excerpt2":
       "Sepuluh Adab bagi Penuntut Ilmu - Panduan penting dalam menuntut ilmu syar'i.",
@@ -168,7 +168,7 @@ const translations = {
     "karyaTulis.title1": "Translation of Bahjatu Atthulab",
     "karyaTulis.excerpt1":
       "Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Syekh Dr. Shalih bin Hamd al-Ushaimy rahimahullah.",
-    "karyaTulis.category2": "Written Work",
+    "karyaTulis.category2": "Translation",
     "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
     "karyaTulis.excerpt2":
       "Ten Etiquettes for Students of Knowledge - An important guide in seeking Islamic knowledge.",

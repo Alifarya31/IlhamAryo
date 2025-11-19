@@ -62,7 +62,7 @@ const karyaTranslations = {
 
         <p><strong>Penulis:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: "Karya Tulis",
+      category: "Terjemahan",
       year: "2024",
       pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf",
       author: "Ilham Aryo Prasetyo",
@@ -83,7 +83,7 @@ const karyaTranslations = {
 
         <p><strong>Author:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: "Written Work",
+      category: "Translation",
       year: "2024",
       pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf",
       author: "Ilham Aryo Prasetyo",
