@@ -141,10 +141,49 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.ctrlKey && e.keyCode == "I".charCodeAt(0)) return false;
   };
 
-  // Scrollspy bootstrap
-  const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: ".navbar",
-  });
+  // Custom Manual Scrollspy
+  const updateNavbarActiveState = () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const navbarElement = document.querySelector('.navbar');
+      const navbarHeight = navbarElement ? navbarElement.offsetHeight : 0; // Handle case where navbar might not exist
+
+      let currentSectionId = '';
+
+      // Find the current section in view
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop - navbarHeight;
+          const sectionHeight = section.offsetHeight;
+          // Use a small offset for better detection when section is just entering view
+          if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+              currentSectionId = section.getAttribute('id');
+          }
+      });
+
+      // Update nav links
+      navLinks.forEach(link => {
+          link.classList.remove('active');
+          // Check if the link's href matches the current section's id, but ignore the blog link which is not a section on this page
+          if (link.getAttribute('href') === `#${currentSectionId}` && !link.href.includes('blog.html')) {
+              link.classList.add('active');
+          }
+      });
+
+      // Special case for when scroll is at the very top or no section is active
+      if (currentSectionId === '' || window.scrollY === 0 || (sections.length > 0 && window.scrollY < sections[0].offsetTop - navbarHeight)) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const homeLink = document.querySelector('.navbar-nav .nav-link[href="#home"]');
+        if (homeLink) {
+            homeLink.classList.add('active');
+        }
+      }
+  };
+
+  // Listen for scroll events
+  window.addEventListener('scroll', updateNavbarActiveState);
+
+  // Trigger the function on page load to set initial active state
+  window.addEventListener('load', updateNavbarActiveState);
 
   // scroll reveal animation content
   const srtop = ScrollReveal({
