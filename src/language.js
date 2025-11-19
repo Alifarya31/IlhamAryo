@@ -66,7 +66,7 @@ const translations = {
     "karyaTulis.category1": "Terjemahan",
     "karyaTulis.title1": "Terjemah Bahjatu Atthulab",
     "karyaTulis.excerpt1":
-      "Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syaikh Al-Albani rahimahullah.",
+      "Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syekh Dr. Shalih bin Hamd al-Ushaimy rahimahullah.",
     "karyaTulis.category2": "Karya Tulis",
     "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
     "karyaTulis.excerpt2":
@@ -167,7 +167,7 @@ const translations = {
     "karyaTulis.category1": "Translation",
     "karyaTulis.title1": "Translation of Bahjatu Atthulab",
     "karyaTulis.excerpt1":
-      "Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Shaykh Al-Albani rahimahullah.",
+      "Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Syekh Dr. Shalih bin Hamd al-Ushaimy rahimahullah.",
     "karyaTulis.category2": "Written Work",
     "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
     "karyaTulis.excerpt2":

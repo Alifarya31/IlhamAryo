@@ -4,28 +4,30 @@
 
 const karyaTranslations = {
   // Karya 1: Terjemah Bahjatu atthulab
-  'terjemah-bahjatu-atthulab': {
+  "terjemah-bahjatu-atthulab": {
     id: {
-      title: 'Terjemah Bahjatu Atthulab',
-      excerpt: 'Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syaikh Al-Albani rahimahullah.',
+      title: "Terjemah Bahjatu Atthulab",
+      excerpt:
+        "Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syaikh Al-Albani rahimahullah.",
       description: `
         <h2>Terjemah Bahjatu Atthulab</h2>
 
-        <p>Terjemahan kitab <strong>Bahjatu Atthulab (بهجة الطلاب)</strong> karya Syaikh Muhammad Nashiruddin Al-Albani rahimahullah.</p>
+        <p>Terjemahan kitab <strong>Bahjatu Atthulab (بهجة الطلاب)</strong> karya Syekh Dr. Shalih bin Hamd al-Ushaimy rahimahullah.</p>
 
         <p>Kitab ini merupakan salah satu karya penting dalam bidang hadits dan ilmu Islam yang membahas tentang kegembiraan para penuntut ilmu.</p>
 
         <p><strong>Penerjemah:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: 'Terjemahan',
-      year: '2024',
-      pdfFile: 'assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf',
-      author: 'Ilham Aryo Prasetyo',
-      tags: ['Terjemahan', 'Hadits', 'Ilmu Islam']
+      category: "Terjemahan",
+      year: "2024",
+      pdfFile: "assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf",
+      author: "Ilham Aryo Prasetyo",
+      tags: ["Terjemahan", "Hadits", "Ilmu Islam"],
     },
     en: {
-      title: 'Translation of Bahjatu Atthulab',
-      excerpt: 'Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Shaykh Al-Albani rahimahullah.',
+      title: "Translation of Bahjatu Atthulab",
+      excerpt:
+        "Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Shaykh Al-Albani rahimahullah.",
       description: `
         <h2>Translation of Bahjatu Atthulab</h2>
 
@@ -35,19 +37,20 @@ const karyaTranslations = {
 
         <p><strong>Translator:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: 'Translation',
-      year: '2024',
-      pdfFile: 'assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf',
-      author: 'Ilham Aryo Prasetyo',
-      tags: ['Translation', 'Hadith', 'Islamic Sciences']
-    }
+      category: "Translation",
+      year: "2024",
+      pdfFile: "assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf",
+      author: "Ilham Aryo Prasetyo",
+      tags: ["Translation", "Hadith", "Islamic Sciences"],
+    },
   },
 
   // Karya 2: الآداب العشرة
-  'al-adab-al-asyarah': {
+  "al-adab-al-asyarah": {
     id: {
-      title: 'الآداب العشرة (Al-Adab Al-Asyarah)',
-      excerpt: 'Sepuluh Adab bagi Penuntut Ilmu - Panduan penting dalam menuntut ilmu syar\'i.',
+      title: "الآداب العشرة (Al-Adab Al-Asyarah)",
+      excerpt:
+        "Sepuluh Adab bagi Penuntut Ilmu - Panduan penting dalam menuntut ilmu syar'i.",
       description: `
         <h2>الآداب العشرة (Al-Adab Al-Asyarah)</h2>
 
@@ -59,15 +62,16 @@ const karyaTranslations = {
 
         <p><strong>Penulis:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: 'Karya Tulis',
-      year: '2024',
-      pdfFile: 'assets/KegiatanKarya/الآداب العشرة.pdf',
-      author: 'Ilham Aryo Prasetyo',
-      tags: ['Adab', 'Ilmu', 'Akhlaq']
+      category: "Karya Tulis",
+      year: "2024",
+      pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf",
+      author: "Ilham Aryo Prasetyo",
+      tags: ["Adab", "Ilmu", "Akhlaq"],
     },
     en: {
-      title: 'الآداب العشرة (Al-Adab Al-Asyarah)',
-      excerpt: 'Ten Etiquettes for Students of Knowledge - An important guide in seeking Islamic knowledge.',
+      title: "الآداب العشرة (Al-Adab Al-Asyarah)",
+      excerpt:
+        "Ten Etiquettes for Students of Knowledge - An important guide in seeking Islamic knowledge.",
       description: `
         <h2>الآداب العشرة (Al-Adab Al-Asyarah)</h2>
 
@@ -79,13 +83,13 @@ const karyaTranslations = {
 
         <p><strong>Author:</strong> Ilham Aryo Prasetyo</p>
       `,
-      category: 'Written Work',
-      year: '2024',
-      pdfFile: 'assets/KegiatanKarya/الآداب العشرة.pdf',
-      author: 'Ilham Aryo Prasetyo',
-      tags: ['Etiquette', 'Knowledge', 'Character']
-    }
-  }
+      category: "Written Work",
+      year: "2024",
+      pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf",
+      author: "Ilham Aryo Prasetyo",
+      tags: ["Etiquette", "Knowledge", "Character"],
+    },
+  },
 
   // Add more works translations below following the same structure
 };
@@ -110,7 +114,7 @@ function getAllKarya(language) {
     if (karyaTranslations[slug][language]) {
       works.push({
         slug: slug,
-        ...karyaTranslations[slug][language]
+        ...karyaTranslations[slug][language],
       });
     }
   }
