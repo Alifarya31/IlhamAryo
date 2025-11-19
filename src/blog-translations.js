@@ -7,7 +7,7 @@ const blogTranslations = {
   'selamat-datang-di-blog-saya': {
     id: {
       title: 'Selamat Datang di Blog Saya',
-      excerpt: 'Blog ini saya peruntukkan untuk menulis, dan mengekalkan faedah-faedah ilmiyah yang saya ketahui dan saya pelajari.',
+      excerpt: 'Selamat Datang di Blog saya!',
       content: `
         <h2>Selamat Datang di Blog Saya</h2>
 
@@ -59,7 +59,7 @@ const blogTranslations = {
   'tujuan-hidup-manusia': {
     id: {
       title: 'Tujuan Hidup Manusia',
-      excerpt: 'Dengan tujuan, seseorang akan lebih terarah menjalani kehidupan di dunia. Lalu apa tujuan manusia dalam kehidupan di dunia ini?',
+      excerpt: 'Mari mengenali apa sebenarnya tujuan hidup kita diciptakan',
       content: `
         <h2>Tujuan Hidup Manusia</h2>
 
@@ -139,7 +139,7 @@ const blogTranslations = {
   'niatku-baik-kok-apa-salahnya': {
     id: {
       title: 'Niatku baik kok, apa salahnya?',
-      excerpt: 'Barangkali kita pernah mendengarkan pernyataan yang saya tulis di judul, atau barangkali lisan kita sendiri yang mengucapkan demikian. Namun bagaimanakah ucapan tersebut dalam konteks amalan Ibadah dalam syariat?',
+      excerpt: 'Niatku sudah baik kok, apa salahnya?',
       content: `
         <p>Kaum Muslimin -rahimani wa rahimakumullah-</p>
 

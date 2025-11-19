@@ -1088,7 +1088,7 @@ form .btn {
 
 /* Certificates Section */
 .certificates {
-  padding: 80px 20px;
+  padding: 80px 20px 40px 20px;
   background: var(--display);
 }
 
@@ -1207,6 +1207,363 @@ form .btn {
   line-height: 1.6;
 }
 
+/* Subsection Header */
+.subsection-header {
+  text-align: center;
+  margin: 40px 0 30px 0;
+}
+
+.subsection-header h3 {
+  color: var(--second);
+  font-weight: 700;
+  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.subsection-header h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--second));
+  border-radius: 2px;
+}
+
+.subsection-header i {
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+/* Karya Tulis Section */
+.karya-tulis {
+  padding: 80px 20px;
+  background: var(--bg);
+}
+
+.karya-tulis .title h2 {
+  color: var(--second);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.karya-tulis .title i {
+  margin-right: 10px;
+}
+
+.karya-tulis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.karya-tulis-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  border: 2px solid rgba(45, 49, 250, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.karya-tulis-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(45, 49, 250, 0.3);
+  border-color: var(--primary);
+}
+
+.karya-tulis-icon {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--second) 100%);
+  padding: 40px;
+  text-align: center;
+}
+
+.karya-tulis-icon i {
+  font-size: 60px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.karya-tulis-card:hover .karya-tulis-icon i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.karya-tulis-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.karya-tulis-category {
+  display: inline-block;
+  background: rgba(45, 49, 250, 0.1);
+  color: var(--primary);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+  border: 1px solid rgba(45, 49, 250, 0.3);
+}
+
+.karya-tulis-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--second);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.karya-tulis-excerpt {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.karya-tulis-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.karya-tulis-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.karya-tulis-meta i {
+  color: var(--primary);
+}
+
+.karya-tulis-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-karya-preview,
+.btn-karya-download {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-karya-preview {
+  background: rgba(45, 49, 250, 0.1);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-karya-preview:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(45, 49, 250, 0.4);
+}
+
+.btn-karya-download {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--second) 100%);
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.btn-karya-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(45, 49, 250, 0.5);
+  background: linear-gradient(135deg, var(--second) 0%, var(--primary) 100%);
+  color: #fff;
+}
+
+/* Karya Modal */
+.karya-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.karya-modal-content {
+  background: #fff;
+  margin: 3% auto;
+  padding: 0;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.4s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.karya-modal-close {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.karya-modal-close:hover,
+.karya-modal-close:focus {
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+
+#karyaModalBody {
+  padding: 40px;
+}
+
+.modal-karya-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-karya-header h2 {
+  color: var(--second);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.modal-karya-category {
+  display: inline-block;
+  background: rgba(45, 49, 250, 0.1);
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-karya-meta {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.modal-karya-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-karya-description {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.modal-karya-description h3 {
+  color: var(--second);
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.modal-karya-description p {
+  margin-bottom: 15px;
+}
+
+.modal-karya-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.modal-btn-download {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--second) 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(45, 49, 250, 0.4);
+}
+
+.modal-btn-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(45, 49, 250, 0.6);
+  background: linear-gradient(135deg, var(--second) 0%, var(--primary) 100%);
+  color: #fff;
+}
+
 /* Responsive untuk Certification/Karya & Kegiatan */
 @media screen and (max-width: 1200px) {
   .video-grid-container {
@@ -1229,7 +1586,8 @@ form .btn {
 
 @media screen and (max-width: 768px) {
   /* Prevent horizontal scroll */
-  body, html {
+  body,
+  html {
     overflow-x: hidden !important;
     max-width: 100vw;
   }
@@ -1344,6 +1702,51 @@ form .btn {
     box-shadow: 0 5px 15px rgba(45, 49, 250, 0.3);
   }
 
+  /* Karya Tulis responsive */
+  .karya-tulis-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .karya-tulis-card {
+    max-width: 100%;
+  }
+
+  .karya-tulis-actions {
+    flex-direction: column;
+  }
+
+  .btn-karya-preview,
+  .btn-karya-download {
+    width: 100%;
+  }
+
+  .karya-modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+
+  #karyaModalBody {
+    padding: 25px;
+  }
+
+  .modal-karya-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-karya-description {
+    font-size: 1rem;
+  }
+
+  .modal-karya-actions {
+    flex-direction: column;
+  }
+
+  .modal-btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+
   /* All sections prevent overflow */
   section {
     max-width: 100vw;
@@ -1352,7 +1755,9 @@ form .btn {
     -webkit-overflow-scrolling: touch;
   }
 
-  .home, .about, .contact {
+  .home,
+  .about,
+  .contact {
     max-width: 100vw;
     overflow-x: hidden;
     padding-left: 15px;
@@ -1360,7 +1765,8 @@ form .btn {
     touch-action: pan-y;
   }
 
-  .home .content, .about .content {
+  .home .content,
+  .about .content {
     max-width: 100%;
     overflow-x: hidden;
     touch-action: pan-y;
@@ -1679,7 +2085,8 @@ form .btn {
 
 /* contact */
 .contact {
-  height: 80vh;
+  min-height: 60vh;
+  padding-top: 20px;
 }
 
 .contact p {

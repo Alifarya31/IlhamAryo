@@ -337,6 +337,14 @@
         </h2>
       </div>
 
+      <!-- Subsection: Konten Video -->
+      <div class="subsection-header" data-aos="fade-up" data-aos-duration="1000">
+        <h3>
+          <i class="fas fa-video"></i>
+          <span data-translate="karya.videoSubtitle">Konten Video</span>
+        </h3>
+      </div>
+
       <!-- Video Card Grid -->
       <div class="video-grid-container">
         <!-- TikTok Video Card -->
@@ -526,7 +534,80 @@
           </div>
         </div>
       </div>
+
+      <!-- Subsection: Karya Tulis -->
+      <div class="subsection-header" data-aos="fade-up" data-aos-duration="1000" style="margin-top: 60px;">
+        <h3>
+          <i class="fas fa-file-pdf"></i>
+          <span data-translate="karya.karyaTulisSubtitle">Karya Tulis</span>
+        </h3>
+      </div>
+
+      <div class="container">
+        <div class="karya-tulis-grid">
+          <!-- Karya 1: Terjemah Bahjatu Atthulab -->
+          <div class="karya-tulis-card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="karya-tulis-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="karya-tulis-content">
+              <span class="karya-tulis-category" data-translate="karyaTulis.category1">Terjemahan</span>
+              <h3 class="karya-tulis-title" data-translate="karyaTulis.title1">Terjemah Bahjatu Atthulab</h3>
+              <p class="karya-tulis-excerpt" data-translate="karyaTulis.excerpt1">
+                Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syaikh Al-Albani rahimahullah.
+              </p>
+              <div class="karya-tulis-meta">
+                <span><i class="far fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-language"></i> Bahasa Indonesia</span>
+              </div>
+              <div class="karya-tulis-actions">
+                <button class="btn-karya-preview" onclick="openKaryaModal('karya1')" data-translate="karyaTulis.preview">
+                  <i class="far fa-eye"></i> Preview
+                </button>
+                <a href="assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf" download class="btn-karya-download" data-translate="karyaTulis.download">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karya 2: Al-Adab Al-Asyarah -->
+          <div class="karya-tulis-card" data-aos="fade-up" data-aos-duration="1200">
+            <div class="karya-tulis-icon">
+              <i class="fas fa-scroll"></i>
+            </div>
+            <div class="karya-tulis-content">
+              <span class="karya-tulis-category" data-translate="karyaTulis.category2">Karya Tulis</span>
+              <h3 class="karya-tulis-title" data-translate="karyaTulis.title2">الآداب العشرة (Al-Adab Al-Asyarah)</h3>
+              <p class="karya-tulis-excerpt" data-translate="karyaTulis.excerpt2">
+                Sepuluh Adab bagi Penuntut Ilmu - Panduan penting dalam menuntut ilmu syar'i.
+              </p>
+              <div class="karya-tulis-meta">
+                <span><i class="far fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-language"></i> Bahasa Arab & Indonesia</span>
+              </div>
+              <div class="karya-tulis-actions">
+                <button class="btn-karya-preview" onclick="openKaryaModal('karya2')" data-translate="karyaTulis.preview">
+                  <i class="far fa-eye"></i> Preview
+                </button>
+                <a href="assets/KegiatanKarya/الآداب العشرة.pdf" download class="btn-karya-download" data-translate="karyaTulis.download">
+                  <i class="fas fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- Karya Modal -->
+    <div id="karyaModal" class="karya-modal">
+      <div class="karya-modal-content">
+        <span class="karya-modal-close" onclick="closeKaryaModal()">&times;</span>
+        <div id="karyaModalBody"></div>
+      </div>
+    </div>
+
     <!-- Certificates Section -->
     <section class="certificates d-flex flex-column" id="certificates">
       <div class="title" data-aos="fade-down" data-aos-duration="1000">
@@ -636,7 +717,7 @@
         </div>
 
         <!-- View All Button -->
-        <div class="viewall-btn d-flex my-5 justify-content-center">
+        <div class="viewall-btn d-flex my-3 justify-content-center">
           <a href="#project" class="btn btn-outline-light" data-aos="fade-down">
             <span>View All</span>
             <i class="fas fa-angle-right"></i>
@@ -780,5 +861,147 @@
 
     <!-- Video Player Script -->
     <script src="src/video-player.js"></script>
+
+    <!-- Karya Modal Script -->
+    <script>
+      // Karya data dengan konten modal untuk setiap karya
+      const karyaData = {
+        id: {
+          karya1: {
+            title: "Terjemah Bahjatu Atthulab",
+            category: "Terjemahan",
+            year: "2024",
+            language: "Bahasa Indonesia",
+            author: "Ilham Aryo Prasetyo",
+            description: `
+              <h3>Tentang Terjemahan Ini</h3>
+              <p>Terjemahan kitab <strong>Bahjatu Atthulab (بهجة الطلاب)</strong> karya Syaikh Muhammad Nashiruddin Al-Albani rahimahullah.</p>
+              <p>Kitab ini merupakan salah satu karya penting dalam bidang hadits dan ilmu Islam yang membahas tentang kegembiraan para penuntut ilmu.</p>
+              <p>Terjemahan ini dibuat dengan penuh kehati-hatian untuk menjaga makna asli dari kitab tersebut sambil tetap mudah dipahami oleh pembaca berbahasa Indonesia.</p>
+            `,
+            pdfFile: "assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf"
+          },
+          karya2: {
+            title: "الآداب العشرة (Al-Adab Al-Asyarah)",
+            category: "Karya Tulis",
+            year: "2024",
+            language: "Bahasa Arab & Indonesia",
+            author: "Ilham Aryo Prasetyo",
+            description: `
+              <h3>Sepuluh Adab bagi Penuntut Ilmu</h3>
+              <p>Karya ini membahas tentang sepuluh adab penting yang harus dimiliki oleh setiap penuntut ilmu syar'i.</p>
+              <p>Adab-adab ini merupakan fondasi penting dalam perjalanan menuntut ilmu agama Islam, meliputi:</p>
+              <ul>
+                <li>Adab terhadap ilmu dan guru</li>
+                <li>Etika dalam belajar dan mengajar</li>
+                <li>Sikap yang harus dimiliki penuntut ilmu</li>
+                <li>Dan adab-adab penting lainnya</li>
+              </ul>
+              <p>Memahami dan mengamalkan adab-adab ini akan membantu penuntut ilmu untuk mendapatkan keberkahan dalam ilmunya dan menjadikan ilmu tersebut bermanfaat.</p>
+            `,
+            pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf"
+          }
+        },
+        en: {
+          karya1: {
+            title: "Translation of Bahjatu Atthulab",
+            category: "Translation",
+            year: "2024",
+            language: "Indonesian",
+            author: "Ilham Aryo Prasetyo",
+            description: `
+              <h3>About This Translation</h3>
+              <p>Translation of the book <strong>Bahjatu Atthulab (بهجة الطلاب)</strong> by Shaykh Muhammad Nashiruddin Al-Albani, may Allah have mercy on him.</p>
+              <p>This book is one of the important works in the field of hadith and Islamic sciences that discusses the joy of seekers of knowledge.</p>
+              <p>This translation was made with great care to preserve the original meaning of the book while remaining easy to understand for Indonesian-speaking readers.</p>
+            `,
+            pdfFile: "assets/KegiatanKarya/Terjemah Bahjatu atthulab.pdf"
+          },
+          karya2: {
+            title: "الآداب العشرة (Al-Adab Al-Asyarah)",
+            category: "Written Work",
+            year: "2024",
+            language: "Arabic & Indonesian",
+            author: "Ilham Aryo Prasetyo",
+            description: `
+              <h3>Ten Etiquettes for Students of Knowledge</h3>
+              <p>This work discusses the ten important etiquettes that every student of Islamic knowledge must possess.</p>
+              <p>These etiquettes are an important foundation in the journey of seeking Islamic religious knowledge, including:</p>
+              <ul>
+                <li>Etiquette towards knowledge and teachers</li>
+                <li>Ethics in learning and teaching</li>
+                <li>Attitudes that students of knowledge should have</li>
+                <li>And other important etiquettes</li>
+              </ul>
+              <p>Understanding and practicing these etiquettes will help students of knowledge to gain blessings in their knowledge and make that knowledge beneficial.</p>
+            `,
+            pdfFile: "assets/KegiatanKarya/الآداب العشرة.pdf"
+          }
+        }
+      };
+
+      // Fungsi untuk membuka modal
+      function openKaryaModal(karyaId) {
+        const modal = document.getElementById('karyaModal');
+        const modalBody = document.getElementById('karyaModalBody');
+
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'id';
+        const karya = karyaData[currentLang][karyaId];
+
+        if (!karya) {
+          console.error('Karya not found:', karyaId);
+          return;
+        }
+
+        // Populate modal content
+        modalBody.innerHTML = `
+          <div class="modal-karya-header">
+            <span class="modal-karya-category">${karya.category}</span>
+            <h2>${karya.title}</h2>
+            <div class="modal-karya-meta">
+              <span><i class="far fa-calendar"></i> ${karya.year}</span>
+              <span><i class="fas fa-language"></i> ${karya.language}</span>
+              <span><i class="far fa-user"></i> ${karya.author}</span>
+            </div>
+          </div>
+          <div class="modal-karya-description">
+            ${karya.description}
+          </div>
+          <div class="modal-karya-actions">
+            <a href="${karya.pdfFile}" download class="modal-btn-download">
+              <i class="fas fa-download"></i>
+              ${currentLang === 'id' ? 'Download PDF' : 'Download PDF'}
+            </a>
+          </div>
+        `;
+
+        // Show modal
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+
+      // Fungsi untuk menutup modal
+      function closeKaryaModal() {
+        const modal = document.getElementById('karyaModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('karyaModal');
+        if (event.target === modal) {
+          closeKaryaModal();
+        }
+      };
+
+      // Close modal with ESC key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeKaryaModal();
+        }
+      });
+    </script>
   </body>
 </html>

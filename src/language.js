@@ -56,7 +56,23 @@ const translations = {
     "skills.pendidikan3": "Alumnus Pesantren Yatim Ibnu Taimiyyah Bogor",
 
     // Karya & Kegiatan
+    "nav.karya": "Karya & Kegiatan",
     "karya.title": "Karya & Kegiatan",
+    "karya.videoSubtitle": "Konten Video",
+    "karya.karyaTulisSubtitle": "Karya Tulis",
+
+    // Karya Tulis Section
+    "karyaTulis.title": "Karya Tulis",
+    "karyaTulis.category1": "Terjemahan",
+    "karyaTulis.title1": "Terjemah Bahjatu Atthulab",
+    "karyaTulis.excerpt1":
+      "Terjemahan kitab Bahjatu Atthulab (بهجة الطلاب) karya Syaikh Al-Albani rahimahullah.",
+    "karyaTulis.category2": "Karya Tulis",
+    "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
+    "karyaTulis.excerpt2":
+      "Sepuluh Adab bagi Penuntut Ilmu - Panduan penting dalam menuntut ilmu syar'i.",
+    "karyaTulis.preview": "Preview",
+    "karyaTulis.download": "Download",
 
     // Certificates Section
     "certificates.title": "Sertifikat",
@@ -116,14 +132,14 @@ const translations = {
 
     // Skills Section
     "skills.title": "Skills & Activities",
-    "skills.keilmuan": "Field of",
-    "skills.keilmuan.span": "Knowledge",
-    "skills.item1": "Aqidah (Islamic Creed)",
+    "skills.keilmuan": "Academic",
+    "skills.keilmuan.span": "Interests",
+    "skills.item1": "Aqidah (Islamic Theology)",
     "skills.item2": "Fiqh (Islamic Jurisprudence)",
     "skills.item3": "Hadith Studies",
     "skills.item4": "Arabic Language",
     "skills.item5": "Arabic Grammar (Nahwu)",
-    "skills.item6": "Classical Text Translation",
+    "skills.item6": "Classical Islamic Text Translation",
 
     "skills.dakwah": "Da'wah",
     "skills.dakwah.span": "Activities",
@@ -141,7 +157,23 @@ const translations = {
     "skills.pendidikan3": "Alumnus of Pesantren Yatim Ibnu Taimiyyah Bogor",
 
     // Karya & Kegiatan
+    "nav.karya": "Works & Activities",
     "karya.title": "Works & Activities",
+    "karya.videoSubtitle": "Video Content",
+    "karya.karyaTulisSubtitle": "Written Works",
+
+    // Karya Tulis Section
+    "karyaTulis.title": "Written Works",
+    "karyaTulis.category1": "Translation",
+    "karyaTulis.title1": "Translation of Bahjatu Atthulab",
+    "karyaTulis.excerpt1":
+      "Translation of the book Bahjatu Atthulab (بهجة الطلاب) by Shaykh Al-Albani rahimahullah.",
+    "karyaTulis.category2": "Written Work",
+    "karyaTulis.title2": "الآداب العشرة (Al-Adab Al-Asyarah)",
+    "karyaTulis.excerpt2":
+      "Ten Etiquettes for Students of Knowledge - An important guide in seeking Islamic knowledge.",
+    "karyaTulis.preview": "Preview",
+    "karyaTulis.download": "Download",
 
     // Certificates Section
     "certificates.title": "Certificates",
