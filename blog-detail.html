@@ -556,14 +556,16 @@
       data-website-id="b2ee613d-c20a-4b7d-bef6-f7cb8d871c09"
     ></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Memaksa Umami mencatat URL lengkap (path + slug)
+      function sendPageview() {
         if (window.umami) {
-          umami("pageview", {
+          umami.track("pageview", {
             url: window.location.pathname + window.location.search,
           });
+        } else {
+          setTimeout(sendPageview, 300);
         }
-      });
+      }
+      sendPageview();
     </script>
 
     <script>
