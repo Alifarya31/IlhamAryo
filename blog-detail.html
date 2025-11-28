@@ -555,6 +555,16 @@
       src="https://cloud.umami.is/script.js"
       data-website-id="b2ee613d-c20a-4b7d-bef6-f7cb8d871c09"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Memaksa Umami mencatat URL lengkap (path + slug)
+        if (window.umami) {
+          umami("pageview", {
+            url: window.location.pathname + window.location.search,
+          });
+        }
+      });
+    </script>
 
     <script>
       // Particles.js Configuration
