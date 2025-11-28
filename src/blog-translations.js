@@ -221,6 +221,116 @@ const blogTranslations = {
       author: 'Ilham Aryo Prasetyo',
       tags: ['Aqeedah', 'Worship', 'Sincerity']
     }
+  },
+
+  // Article 4: Waktu Spesial Bagi Seorang Hamba
+  'waktu-spesial-bagi-seorang-hamba': {
+    id: {
+      title: 'Waktu Spesial Bagi Seorang Hamba',
+      excerpt: 'Allah telah menyiapkan waktu khusus dimana seorang hamba dapat menghilangkan rasa letih penat dengan bermunajat, berdoa, dan memohon ampunan-Nya.',
+      content: `
+        <h2>Waktu Spesial Bagi Seorang Hamba</h2>
+
+        <p>Kawan-kawanku sekalian,</p>
+
+        <p>Sudah tidak asing lagi bahwa dalam perjalanan hidup di dunia ini kita menghadapi berbagai lika-liku kehidupan, cobaan dan ujian silih berganti datang menyapa, belum lagi dengan kondisi keimanan kita yang terkadang naik dan terkadang turun. Dan jiwa pun haus mencari ketenangan tersebut.</p>
+
+        <p>Ketahuilah, bahwa Allah telah menyiapkan waktu khusus dimana seorang hamba dapat menghilangkan rasa letih penat dengan bermunajat, berdoa, dan memohon ampunan-Nya.</p>
+
+        <p><strong>Waktu itu adalah sepertiga malam yang akhir</strong></p>
+
+        <p>Rasulullah ﷺ bersabda:</p>
+
+        <blockquote>
+          يَنْزِلُ رَبُّنا تَبارَكَ وتَعالَى كُلَّ لَيْلةٍ إلى السَّماءِ الدُّنْيا حِينَ يَبْقَى ثُلُثُ اللَّيْلِ الآخِرُ، يقولُ: مَن يَدْعُونِي، فأسْتَجِيبَ له؟ مَن يَسْأَلُنِي فأُعْطِيَهُ؟ مَن يَستَغْفِرُني فأغْفِرَ له؟
+          <br><br>
+          "Allah turun setiap malam ke langit dunia tatkala malam menyisakan sepertiganya, dan Allah berfirman: siapa saja yang hendak berdoa kepada-Ku maka aku kabulkan, siapa saja yang meminta kepadaku maka akan aku beri, siapa saja yang memohon ampunan, akan aku ampuni ia"
+        </blockquote>
+
+        <p>Hafiz al-Hakami رحمه الله dalam bait syairnya berkata:</p>
+
+        <blockquote>
+          وقد روى الثقات عن خير الملا<br>
+          <em>Orang-orang yang terpercaya telah meriwayatkan dari manusia terbaik</em>
+          <br><br>
+          بأنه عزوجل وعلا<br>
+          <em>Bahwa Allah Jalla wa 'alaa</em>
+          <br><br>
+          في ثلث الليل الأخير ينزل<br>
+          <em>Turun di sepertiga malam yang akhir</em>
+          <br><br>
+          يقول: هل من تائب فيقبل<br>
+          <em>Berfirman: Apakah ada orang yang bertaubat yang ingin diterima taubatnya</em>
+          <br><br>
+          هل من مسيء طالب للمغفرة<br>
+          <em>apakah ada orang yang berbuat buruk meminta ampunan?</em>
+          <br><br>
+          يجد كريما قابلا للمعذرة<br>
+          <em>akan mendapati Al-Kariim (Allah Ta'ala) menerima ampunan</em>
+        </blockquote>
+
+        <p>Maka, di waktu spesial ini sebaiknya kita gunakan untuk hal-hal yang baik, bermunajat, salat, memohon ampunan, bertaubat, meminta segala hal yang menjadi keinginan kita seperti ilmu yang bermanfaat, rizki yang halal, keturunan yang salih dan saliha, dan kemampuan untuk menjalani kehidupan ini dengan baik.</p>
+
+        <p>Semoga Allah memudahkan kita untuk memanfaatkan momen ini sebaik-baiknya.</p>
+
+        <p><em>Wallahu Ta'ala A'lam bi shawwab.</em></p>
+      `,
+      author: 'Ilham Aryo Prasetyo',
+      tags: ['Ibadah', 'Doa', 'Malam']
+    },
+    en: {
+      title: 'A Special Time for the Servant',
+      excerpt: 'Allah has prepared a special time where a servant can relieve their weariness by supplicating, praying, and asking for His forgiveness.',
+      content: `
+        <h2>A Special Time for the Servant</h2>
+
+        <p>Dear friends,</p>
+
+        <p>It is not unfamiliar that in our journey through this worldly life, we face various twists and turns, trials and tribulations that come alternately, not to mention our faith condition which sometimes rises and sometimes falls. And the soul thirsts for that tranquility.</p>
+
+        <p>Know that Allah has prepared a special time where a servant can relieve their weariness by supplicating, praying, and asking for His forgiveness.</p>
+
+        <p><strong>That time is the last third of the night</strong></p>
+
+        <p>The Messenger of Allah ﷺ said:</p>
+
+        <blockquote>
+          يَنْزِلُ رَبُّنا تَبارَكَ وتَعالَى كُلَّ لَيْلةٍ إلى السَّماءِ الدُّنْيا حِينَ يَبْقَى ثُلُثُ اللَّيْلِ الآخِرُ، يقولُ: مَن يَدْعُونِي، فأسْتَجِيبَ له؟ مَن يَسْأَلُنِي فأُعْطِيَهُ؟ مَن يَستَغْفِرُني فأغْفِرَ له؟
+          <br><br>
+          "Allah descends every night to the lowest heaven when the last third of the night remains, and He says: Who will call upon Me so that I may answer him? Who will ask of Me so that I may give him? Who will seek My forgiveness so that I may forgive him?"
+        </blockquote>
+
+        <p>Hafiz al-Hakami, may Allah have mercy on him, said in his poetic verses:</p>
+
+        <blockquote>
+          وقد روى الثقات عن خير الملا<br>
+          <em>The trustworthy ones have narrated from the best of people</em>
+          <br><br>
+          بأنه عزوجل وعلا<br>
+          <em>That He, the Mighty and Exalted</em>
+          <br><br>
+          في ثلث الليل الأخير ينزل<br>
+          <em>Descends in the last third of the night</em>
+          <br><br>
+          يقول: هل من تائب فيقبل<br>
+          <em>Saying: Is there anyone repenting whose repentance will be accepted?</em>
+          <br><br>
+          هل من مسيء طالب للمغفرة<br>
+          <em>Is there anyone who has wronged seeking forgiveness?</em>
+          <br><br>
+          يجد كريما قابلا للمعذرة<br>
+          <em>He will find Al-Kareem (Allah the Most High) accepting the excuse</em>
+        </blockquote>
+
+        <p>Therefore, during this special time, we should use it for good things: supplicating, praying, seeking forgiveness, repenting, asking for everything we desire such as beneficial knowledge, lawful sustenance, righteous offspring, and the ability to live this life well.</p>
+
+        <p>May Allah make it easy for us to make the best use of this moment.</p>
+
+        <p><em>And Allah the Most High knows best.</em></p>
+      `,
+      author: 'Ilham Aryo Prasetyo',
+      tags: ['Worship', 'Prayer', 'Night']
+    }
   }
 
   // Add more article translations below following the same structure
