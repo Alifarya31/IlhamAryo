@@ -552,20 +552,21 @@
 
     <script
       defer
+      data-auto-track="false"
       src="https://cloud.umami.is/script.js"
       data-website-id="b2ee613d-c20a-4b7d-bef6-f7cb8d871c09"
     ></script>
     <script>
-      function sendPageview() {
-        if (window.umami) {
-          umami.track("pageview", {
+      function manualPageview() {
+        if (window.umami && window.umami.trackPageView) {
+          window.umami.trackPageView({
             url: window.location.pathname + window.location.search,
           });
         } else {
-          setTimeout(sendPageview, 300);
+          setTimeout(manualPageview, 300);
         }
       }
-      sendPageview();
+      manualPageview();
     </script>
 
     <script>
