@@ -41,7 +41,7 @@
       }
 
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         background: var(--bg-color);
         color: var(--text-color);
         overflow-x: hidden;
@@ -241,9 +241,15 @@
         font-weight: 600;
       }
 
-      .article-content h1 { font-size: 2.2rem; }
-      .article-content h2 { font-size: 1.8rem; }
-      .article-content h3 { font-size: 1.5rem; }
+      .article-content h1 {
+        font-size: 2.2rem;
+      }
+      .article-content h2 {
+        font-size: 1.8rem;
+      }
+      .article-content h3 {
+        font-size: 1.5rem;
+      }
 
       .article-content p {
         font-size: 1.1rem;
@@ -325,8 +331,12 @@
       }
 
       @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       /* Error State */
@@ -399,9 +409,15 @@
           padding: 25px 15px;
         }
 
-        .article-content h1 { font-size: 1.8rem; }
-        .article-content h2 { font-size: 1.5rem; }
-        .article-content h3 { font-size: 1.3rem; }
+        .article-content h1 {
+          font-size: 1.8rem;
+        }
+        .article-content h2 {
+          font-size: 1.5rem;
+        }
+        .article-content h3 {
+          font-size: 1.3rem;
+        }
 
         .article-content p,
         .article-content li {
@@ -418,7 +434,12 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="assets/img/logo ilham.jpg" alt="Logo Ilham" width="40" height="40">
+          <img
+            src="assets/img/logo ilham.jpg"
+            alt="Logo Ilham"
+            width="40"
+            height="40"
+          />
         </a>
 
         <button
@@ -433,25 +454,49 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#home" data-translate="nav.home">Home</a>
+              <a
+                class="nav-link"
+                href="index.html#home"
+                data-translate="nav.home"
+                >Home</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+              <a
+                class="nav-link"
+                href="index.html#about"
+                data-translate="nav.about"
+                >About</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="index.html#karya" data-translate="nav.karya">Karya & Kegiatan</a>
+              <a
+                class="nav-link"
+                href="index.html#karya"
+                data-translate="nav.karya"
+                >Karya & Kegiatan</a
+              >
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link active" href="blog.html" data-translate="nav.blog">Blog</a>
+              <a
+                class="nav-link active"
+                href="blog.html"
+                data-translate="nav.blog"
+                >Blog</a
+              >
             </li>
           </ul>
 
           <div class="language-switcher">
-            <button class="lang-btn active" data-lang="id" title="Bahasa Indonesia">
-              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20">
+            <button
+              class="lang-btn active"
+              data-lang="id"
+              title="Bahasa Indonesia"
+            >
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" width="20" />
             </button>
             <button class="lang-btn" data-lang="en" title="English">
-              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20">
+              <img src="https://flagcdn.com/w20/gb.png" alt="EN" width="20" />
             </button>
           </div>
         </div>
@@ -473,14 +518,16 @@
         </div>
 
         <!-- Article Content -->
-        <div id="articleContent" style="display: none;"></div>
+        <div id="articleContent" style="display: none"></div>
 
         <!-- Error State -->
-        <div id="errorState" class="error-state" style="display: none;">
+        <div id="errorState" class="error-state" style="display: none">
           <i class="fas fa-exclamation-triangle"></i>
           <h3 data-translate="article.error.title">Artikel Tidak Ditemukan</h3>
-          <p data-translate="article.error.message">Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.</p>
-          <a href="blog.html" class="back-button" style="margin-top: 20px;">
+          <p data-translate="article.error.message">
+            Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.
+          </p>
+          <a href="blog.html" class="back-button" style="margin-top: 20px">
             <i class="fas fa-arrow-left"></i>
             <span data-translate="article.back">Kembali ke Blog</span>
           </a>
@@ -503,179 +550,188 @@
     <!-- Marked.js for Markdown Rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="b2ee613d-c20a-4b7d-bef6-f7cb8d871c09"
+    ></script>
+
     <script>
       // Particles.js Configuration
-      particlesJS('particles-js', {
+      particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: '#0ef' },
-          shape: { type: 'circle' },
+          color: { value: "#0ef" },
+          shape: { type: "circle" },
           opacity: { value: 0.5, random: false },
           size: { value: 3, random: true },
           line_linked: {
             enable: true,
             distance: 150,
-            color: '#0ef',
+            color: "#0ef",
             opacity: 0.4,
-            width: 1
+            width: 1,
           },
           move: {
             enable: true,
             speed: 2,
-            direction: 'none',
+            direction: "none",
             random: false,
             straight: false,
-            out_mode: 'out',
-            bounce: false
-          }
+            out_mode: "out",
+            bounce: false,
+          },
         },
         interactivity: {
-          detect_on: 'canvas',
+          detect_on: "canvas",
           events: {
-            onhover: { enable: true, mode: 'grab' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
           },
           modes: {
             grab: { distance: 140, line_linked: { opacity: 1 } },
-            push: { particles_nb: 4 }
-          }
+            push: { particles_nb: 4 },
+          },
         },
-        retina_detect: true
+        retina_detect: true,
       });
 
       // Translations
       const translations = {
         id: {
-          'nav.home': 'Beranda',
-          'nav.about': 'Tentang',
-          'nav.karya': 'Karya & Kegiatan',
-          'nav.blog': 'Blog',
-          'article.back': 'Kembali ke Blog',
-          'article.loading': 'Memuat artikel...',
-          'article.error.title': 'Artikel Tidak Ditemukan',
-          'article.error.message': 'Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.'
+          "nav.home": "Beranda",
+          "nav.about": "Tentang",
+          "nav.karya": "Karya & Kegiatan",
+          "nav.blog": "Blog",
+          "article.back": "Kembali ke Blog",
+          "article.loading": "Memuat artikel...",
+          "article.error.title": "Artikel Tidak Ditemukan",
+          "article.error.message":
+            "Maaf, artikel yang Anda cari tidak ditemukan atau telah dihapus.",
         },
         en: {
-          'nav.home': 'Home',
-          'nav.about': 'About',
-          'nav.karya': 'Works & Activities',
-          'nav.blog': 'Blog',
-          'article.back': 'Back to Blog',
-          'article.loading': 'Loading article...',
-          'article.error.title': 'Article Not Found',
-          'article.error.message': 'Sorry, the article you are looking for was not found or has been removed.'
-        }
+          "nav.home": "Home",
+          "nav.about": "About",
+          "nav.karya": "Works & Activities",
+          "nav.blog": "Blog",
+          "article.back": "Back to Blog",
+          "article.loading": "Loading article...",
+          "article.error.title": "Article Not Found",
+          "article.error.message":
+            "Sorry, the article you are looking for was not found or has been removed.",
+        },
       };
 
       // Get saved language or default to Indonesian
-      let currentLanguage = localStorage.getItem('language') || 'id';
+      let currentLanguage = localStorage.getItem("language") || "id";
 
       // Function to change language
       function changeLanguage(lang) {
         currentLanguage = lang;
-        localStorage.setItem('language', lang);
+        localStorage.setItem("language", lang);
 
-        document.querySelectorAll('[data-translate]').forEach(element => {
-          const key = element.getAttribute('data-translate');
+        document.querySelectorAll("[data-translate]").forEach((element) => {
+          const key = element.getAttribute("data-translate");
           if (translations[lang] && translations[lang][key]) {
             element.textContent = translations[lang][key];
           }
         });
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-          btn.classList.remove('active');
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.remove("active");
         });
-        document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+        document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
       }
 
       // Initialize language
       changeLanguage(currentLanguage);
 
       // Language button listeners
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          changeLanguage(this.getAttribute('data-lang'));
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          changeLanguage(this.getAttribute("data-lang"));
           // Reload article with new language
-          document.getElementById('articleContent').innerHTML = '';
-          document.getElementById('loading').style.display = 'block';
-          document.getElementById('errorState').style.display = 'none';
+          document.getElementById("articleContent").innerHTML = "";
+          document.getElementById("loading").style.display = "block";
+          document.getElementById("errorState").style.display = "none";
           fetchArticle();
         });
       });
 
       // Get slug from URL
       const urlParams = new URLSearchParams(window.location.search);
-      const slug = urlParams.get('slug');
+      const slug = urlParams.get("slug");
 
       // Function to render rich text content
       function renderRichText(content) {
-        if (!content || !content.content) return '';
+        if (!content || !content.content) return "";
 
-        let html = '';
+        let html = "";
 
-        content.content.forEach(node => {
-          if (node.nodeType === 'paragraph') {
-            html += '<p>';
+        content.content.forEach((node) => {
+          if (node.nodeType === "paragraph") {
+            html += "<p>";
             if (node.content) {
-              node.content.forEach(textNode => {
-                if (textNode.nodeType === 'text') {
+              node.content.forEach((textNode) => {
+                if (textNode.nodeType === "text") {
                   let text = textNode.value;
                   if (textNode.marks) {
-                    textNode.marks.forEach(mark => {
-                      if (mark.type === 'bold') text = `<strong>${text}</strong>`;
-                      if (mark.type === 'italic') text = `<em>${text}</em>`;
-                      if (mark.type === 'code') text = `<code>${text}</code>`;
+                    textNode.marks.forEach((mark) => {
+                      if (mark.type === "bold")
+                        text = `<strong>${text}</strong>`;
+                      if (mark.type === "italic") text = `<em>${text}</em>`;
+                      if (mark.type === "code") text = `<code>${text}</code>`;
                     });
                   }
                   html += text;
-                } else if (textNode.nodeType === 'hyperlink') {
-                  const linkText = textNode.content[0]?.value || '';
+                } else if (textNode.nodeType === "hyperlink") {
+                  const linkText = textNode.content[0]?.value || "";
                   html += `<a href="${textNode.data.uri}" target="_blank">${linkText}</a>`;
                 }
               });
             }
-            html += '</p>';
-          } else if (node.nodeType === 'heading-1') {
-            html += `<h1>${node.content[0]?.value || ''}</h1>`;
-          } else if (node.nodeType === 'heading-2') {
-            html += `<h2>${node.content[0]?.value || ''}</h2>`;
-          } else if (node.nodeType === 'heading-3') {
-            html += `<h3>${node.content[0]?.value || ''}</h3>`;
-          } else if (node.nodeType === 'heading-4') {
-            html += `<h4>${node.content[0]?.value || ''}</h4>`;
-          } else if (node.nodeType === 'unordered-list') {
-            html += '<ul>';
-            node.content.forEach(listItem => {
-              html += '<li>';
+            html += "</p>";
+          } else if (node.nodeType === "heading-1") {
+            html += `<h1>${node.content[0]?.value || ""}</h1>`;
+          } else if (node.nodeType === "heading-2") {
+            html += `<h2>${node.content[0]?.value || ""}</h2>`;
+          } else if (node.nodeType === "heading-3") {
+            html += `<h3>${node.content[0]?.value || ""}</h3>`;
+          } else if (node.nodeType === "heading-4") {
+            html += `<h4>${node.content[0]?.value || ""}</h4>`;
+          } else if (node.nodeType === "unordered-list") {
+            html += "<ul>";
+            node.content.forEach((listItem) => {
+              html += "<li>";
               if (listItem.content && listItem.content[0]?.content) {
-                listItem.content[0].content.forEach(textNode => {
-                  html += textNode.value || '';
+                listItem.content[0].content.forEach((textNode) => {
+                  html += textNode.value || "";
                 });
               }
-              html += '</li>';
+              html += "</li>";
             });
-            html += '</ul>';
-          } else if (node.nodeType === 'ordered-list') {
-            html += '<ol>';
-            node.content.forEach(listItem => {
-              html += '<li>';
+            html += "</ul>";
+          } else if (node.nodeType === "ordered-list") {
+            html += "<ol>";
+            node.content.forEach((listItem) => {
+              html += "<li>";
               if (listItem.content && listItem.content[0]?.content) {
-                listItem.content[0].content.forEach(textNode => {
-                  html += textNode.value || '';
+                listItem.content[0].content.forEach((textNode) => {
+                  html += textNode.value || "";
                 });
               }
-              html += '</li>';
+              html += "</li>";
             });
-            html += '</ol>';
-          } else if (node.nodeType === 'blockquote') {
-            html += '<blockquote>';
+            html += "</ol>";
+          } else if (node.nodeType === "blockquote") {
+            html += "<blockquote>";
             if (node.content && node.content[0]?.content) {
-              node.content[0].content.forEach(textNode => {
-                html += textNode.value || '';
+              node.content[0].content.forEach((textNode) => {
+                html += textNode.value || "";
               });
             }
-            html += '</blockquote>';
+            html += "</blockquote>";
           }
         });
 
@@ -685,8 +741,8 @@
       // Fetch article from Contentful
       async function fetchArticle() {
         if (!slug) {
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('errorState').style.display = 'block';
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("errorState").style.display = "block";
           return;
         }
 
@@ -696,7 +752,7 @@
           );
 
           if (!response.ok) {
-            throw new Error('Failed to fetch article');
+            throw new Error("Failed to fetch article");
           }
 
           const data = await response.json();
@@ -704,13 +760,13 @@
           if (data.items && data.items.length > 0) {
             displayArticle(data.items[0], data.includes);
           } else {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('errorState').style.display = 'block';
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("errorState").style.display = "block";
           }
         } catch (error) {
-          console.error('Error fetching article:', error);
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('errorState').style.display = 'block';
+          console.error("Error fetching article:", error);
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("errorState").style.display = "block";
         }
       }
 
@@ -738,18 +794,24 @@
 
         // Get featured image
         const featuredImageId = fields.featuredImage?.sys?.id;
-        const featuredImage = assets.find(asset => asset.sys.id === featuredImageId);
-        const imageUrl = featuredImage?.fields?.file?.url || '';
+        const featuredImage = assets.find(
+          (asset) => asset.sys.id === featuredImageId
+        );
+        const imageUrl = featuredImage?.fields?.file?.url || "";
 
         // Format date
-        const publishedDate = new Date(fields.publishedDate).toLocaleDateString(currentLanguage === 'id' ? 'id-ID' : 'en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
+        const publishedDate = new Date(fields.publishedDate).toLocaleDateString(
+          currentLanguage === "id" ? "id-ID" : "en-US",
+          {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }
+        );
 
         // Reading time text
-        const readingTimeText = currentLanguage === 'id' ? 'menit baca' : 'min read';
+        const readingTimeText =
+          currentLanguage === "id" ? "menit baca" : "min read";
 
         // Update page title
         document.title = `${title} - Ilham Aryo Prasetyo`;
@@ -763,38 +825,56 @@
                 <i class="far fa-calendar"></i>
                 ${publishedDate}
               </span>
-              ${author ? `
+              ${
+                author
+                  ? `
                 <span class="article-meta-item">
                   <i class="far fa-user"></i>
                   ${author}
                 </span>
-              ` : ''}
-              ${fields.readingTime ? `
+              `
+                  : ""
+              }
+              ${
+                fields.readingTime
+                  ? `
                 <span class="article-meta-item">
                   <i class="far fa-clock"></i>
                   ${fields.readingTime} ${readingTimeText}
                 </span>
-              ` : ''}
+              `
+                  : ""
+              }
             </div>
-            ${tags ? `
+            ${
+              tags
+                ? `
               <div class="article-tags">
-                ${tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+                ${tags
+                  .map((tag) => `<span class="article-tag">${tag}</span>`)
+                  .join("")}
               </div>
-            ` : ''}
+            `
+                : ""
+            }
           </div>
-          ${imageUrl ? `<img src="https:${imageUrl}" alt="${title}" class="article-featured-image">` : ''}
+          ${
+            imageUrl
+              ? `<img src="https:${imageUrl}" alt="${title}" class="article-featured-image">`
+              : ""
+          }
           <div class="article-content">
             ${contentHtml}
           </div>
         `;
 
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('articleContent').innerHTML = articleHtml;
-        document.getElementById('articleContent').style.display = 'block';
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("articleContent").innerHTML = articleHtml;
+        document.getElementById("articleContent").style.display = "block";
       }
 
       // Load article on page load
-      document.addEventListener('DOMContentLoaded', fetchArticle);
+      document.addEventListener("DOMContentLoaded", fetchArticle);
     </script>
   </body>
 </html>
