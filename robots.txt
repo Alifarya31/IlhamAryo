@@ -1,0 +1,12 @@
+# robots.txt untuk ilhamaryo.vercel.app
+
+User-agent: *
+Allow: /
+Disallow: /assets/certificate/
+Disallow: /assets/KegiatanKarya/
+
+# Sitemap
+Sitemap: https://ilhamaryo.vercel.app/sitemap.xml
+
+# Crawl delay (optional - untuk menghindari overload)
+Crawl-delay: 10
